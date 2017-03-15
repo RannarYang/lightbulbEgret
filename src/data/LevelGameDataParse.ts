@@ -6,10 +6,7 @@ class LevelGameDataParse {
 
 		GameData.line  = val.line;
 		GameData.col = val.col;
-		// elementType
-		for(let i = 1; i <= 5; i++) {
-			GridElementType.getInstance(i);
-		}
+
 		// elements
 		let square = val.square;
 		GameData.elements = [];
@@ -19,7 +16,7 @@ class LevelGameDataParse {
 				let elementData = square[i][j];
 				let trueRot = val.trueRot && val.trueRot.length ? val.trueRot[i * GameData.col + j] : elementData.trueRot;
 				GameData.elements[i][j] = new GridElement(i, j, elementData.type, elementData.kind, elementData.init_rot, trueRot);
-				if(elementData.kind === 'light' || elementData.kind === 'unlight') {
+				if(elementData.kind === 'light') {
 					GameData.lightNum++;
 				} else if(elementData.kind === 'power') {
 					GameData.powerState.x = i;
@@ -27,7 +24,6 @@ class LevelGameDataParse {
 				}
 			}
 		}
-		// GameData.trueRot = val.trueRot;
 
 		GameData.brickwidth = Math.floor(GameData.stageW / (GameData.col + 0.5));
 		GameData.roadwidth = 0.2 * GameData.brickwidth;

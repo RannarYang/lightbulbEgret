@@ -6,11 +6,8 @@ class LevelLogic {
 		this.spanningNode = [];
 		//随机获取电源位置
 		let powerNum = Math.ceil(Math.random() * grade.line * grade.col);
-		let powerPos = LevelLogic.num2pos(powerNum, grade);
-		/*
-		data.powerState.x = powerPos.line;
-		data.powerState.y = powerPos.col;
-		*/
+		let powerPos = Util.num2pos(powerNum, grade);
+
 		let square = LevelLogic.createSpanningTree(grade, powerNum, powerPos);
 		let level_el = {
 			line: grade.line,
@@ -19,40 +16,7 @@ class LevelLogic {
 		};
 		return level_el;
 	}
-	public static getDifferentNum(min, max, num, arr = null) {
-		let temp_array = new Array();
-		if (!arr) {
-			for (let i = min; i <= max; i++) {
-				temp_array.push(i);
-			}
-		} else {
-			let arr_len = arr.length;
-			for (let i = 0; i < arr_len; i++) {
-				temp_array[i] = arr[i];
-			}
-		}
-		let return_array = [];
-		for (let j = 0; j < num; j++) {
-			if (temp_array.length > 0) { //数组可以取出元素
-				let arrIndex = Math.floor(Math.random() * temp_array.length); //产生一个随机索引
-				//将此随机所以的对应的数组元素copy出来
-				return_array[j] = temp_array[arrIndex];
-				//delete 此索引的数组元素
-				temp_array.splice(arrIndex, 1);
-			} else {
-				break;
-			}
-		}
-		return return_array;
-	}
-	public static num2pos(num, grade) {
-		let col = grade.col;
-		let line = grade.line;
-		return {
-			line: Math.floor((num - 1) / col),
-			col: (num - 1) % grade.col
-		}
-	}
+
 	private static createSpanningTree(grade, parentState, powerPos) {
 		LevelLogic.getCanAddChild(grade, parentState, powerPos, 1, 3, 0);
 		this.makeLink(grade);
@@ -85,7 +49,7 @@ class LevelLogic {
 						square[i][j].kind = "power";
 					}
 					if (node.child.length == 0) {
-						square[i][j].kind = "unlight";
+						square[i][j].kind = "light";
 					}
 					//设置type
 					square[i][j].type = this.exit2type(square[i][j].exit);
@@ -95,7 +59,7 @@ class LevelLogic {
 					//设置type
 					square[i][j].type = Math.ceil(4 * Math.random()) + 1;
 					//设置exit
-					this.changeExit(square[i][j]);
+                    square[i][j].exit = Util.getExitByTypeAndRot(square[i][j].type, square[i][j].rot);
 				}
 			}
 		}
@@ -111,23 +75,11 @@ class LevelLogic {
 		let remainUnlink = this.minus(temp_array, this.spanningNode);
 		let unlink_len = remainUnlink.length;
 		for (let i = 0; i < unlink_len; i++) {
-			let canLink = [];
 			let itState = remainUnlink[i];
-			let state = this.num2pos(itState, grade);
-			let line = state.line;
-			let col = state.col;
-			if (this.isInGrid(itState - 1, grade) && col > 0) {
-				canLink.push(itState - 1);
-			}
-			if (this.isInGrid(itState + 1, grade) && col < grade.col - 1) {
-				canLink.push(itState + 1);
-			}
-			if (this.isInGrid(itState + grade.col, grade) && line < grade.line - 1) {
-				canLink.push(itState + grade.col);
-			}
-			if (this.isInGrid(itState - grade.col, grade) && line > 0) {
-				canLink.push(itState - grade.col);
-			}
+			
+			
+            let canLink = this.getArroundGrid(itState, grade);
+
 			canLink = this.intersection(canLink, this.spanningNode);
 			if (canLink.length) {
 				let index = Math.floor((Math.random() * canLink.length));
@@ -155,25 +107,10 @@ class LevelLogic {
             if (!this.isInGrid(parentState, grade)) {
                 return;
             }
-            let canMove = [];
-            let state = this.num2pos(parentState, grade);
-            let line = state.line;
-            let col = state.col;
-            if (this.isInGrid(parentState - 1, grade) && col > 0) {
-                canMove.push(parentState - 1);
-            }
-            if (this.isInGrid(parentState + 1, grade) && col < grade.col - 1) {
-                canMove.push(parentState + 1);
-            }
-            if (this.isInGrid(parentState + grade.col, grade) && line < grade.line - 1) {
-                canMove.push(parentState + grade.col);
-            }
-            if (this.isInGrid(parentState - grade.col, grade) && line > 0) {
-                canMove.push(parentState - grade.col);
-            }
+            let canMove = this.getArroundGrid(parentState, grade);
             canMove = this.minus(canMove, this.spanningNode);
             let childNum = Math.floor(minChild + Math.random() * (Math.min(canMove.length, maxChild)));
-            let child = this.getDifferentNum(null, null, childNum, canMove);
+            let child = Util.getDifferentNum(null, null, childNum, canMove);
             let node = {
                 parent: parent,
                 child: child
@@ -182,44 +119,11 @@ class LevelLogic {
             this.spanningTree[parentState] = node;
             let child_len = child.length;
             for (let i = 0; i < child_len; i++) {
-                let pos = this.num2pos(child[i], grade);
+                let pos = Util.num2pos(child[i], grade);
                 this.getCanAddChild(grade, child[i], pos, 0, 3, parentState);
             }
         }
-        //rot2exit
-        private static changeExit(square) {
-            let time;
-            switch ("type" + square.type) {
-                case "type1":
-                    square.exit = [0, 0, 0, 0];
-                    time = square.rot / 90 % 4;
-                    square.exit[time] = true;
-                    break;
-                case "type2":
-                    square.exit = [0, 0, 0, 0];
-                    time = square.rot / 90 % 2;
-                    if (time == 1) {
-                        square.exit = [0, true, 0, true];
-                    } else {
-                        square.exit = [true, 0, true, 0];
-                    }
-                    break;
-                case "type3":
-                    square.exit = [true, true, true, true];
-                    time = square.rot / 90 % 4;
-                    square.exit[time] = false;
-                    break;
-                case "type4":
-                    square.exit = [0, 0, 0, 0];
-                    time = square.rot / 90 % 4;
-                    square.exit[time] = true;
-                    square.exit[(time - 1 + 4) % 4] = true;
-                    break;
-                case "type5":
-                    square.exit = [0, 0, 0, 0];
-                    break;
-            }
-        }
+
         //exit2rot
         private static exit2rot(exit,type){
             let rot;
@@ -243,12 +147,31 @@ class LevelLogic {
                             rot = 90;
                         }
                     }
-                    //console.log(exit);
-                    //console.log("rot",rot);
+                    break;
             }
             return rot;
         }
         //辅助方法
+        private static getArroundGrid(itState, grade):number[] {
+            let arroundGridArr = [];
+            let state = Util.num2pos(itState, grade);
+            let line = state.line;
+            let col = state.col;
+            if (this.isInGrid(itState - 1, grade) && col > 0) {
+                arroundGridArr.push(itState - 1);
+            }
+            if (this.isInGrid(itState + 1, grade) && col < grade.col - 1) {
+                arroundGridArr.push(itState + 1);
+            }
+            if (this.isInGrid(itState + grade.col, grade) && line < grade.line - 1) {
+                arroundGridArr.push(itState + grade.col);
+            }
+            if (this.isInGrid(itState - grade.col, grade) && line > 0) {
+                arroundGridArr.push(itState - grade.col);
+            }
+            return arroundGridArr;
+
+        }
         private static isInGrid(num, grade) {
             let max = grade.line * grade.col;
             if (0 < num && num <= max) {

@@ -1,13 +1,15 @@
 class LevelView extends eui.Component{
+	private _dispatcher: egret.EventDispatcher;
 	private levelBtnGroup1: eui.Group;
 	private levelBtnGroup2: eui.Group;
 	private prevButton: eui.Button;
 	private nextButton: eui.Button;
 	private endlessButton: eui.Button;
-	private _pageNum: number;
+	
 	private slideLeft: egret.tween.TweenGroup;
 	private slideRight: egret.tween.TweenGroup;
-	private _dispatcher: egret.EventDispatcher;
+	
+	private _pageNum: number;
 	private _allSelButton: LevelSelButtonView[] = [];
 	public get dispatcher() {
 		return this._dispatcher;
@@ -17,16 +19,6 @@ class LevelView extends eui.Component{
 		this._pageNum = pageNum;
 		this.skinName = userSkins.LevelScreenSkin;
 		this.init();
-	}
-	public childrenCreated() {
-		super.childrenCreated();
-    }
-	public update() {
-		this.setAllLevelSelButtonStatus();
-	}
-	private init() {
-		this._dispatcher = new egret.EventDispatcher();
-		this.hide();
 	}
 	public partAdded(partName: string,instance: any): void { 
 		if(instance == this.levelBtnGroup1){
@@ -54,14 +46,24 @@ class LevelView extends eui.Component{
 			}
 		}
 	}
+	public update() {
+		this.setAllLevelSelButtonStatus();
+	}
+	private init() {
+		this._dispatcher = new egret.EventDispatcher();
+		this.hide();
+	}
+	
 	private addLevelSelBtns(groupNum:number, row, col) {
 		for(let i = 0; i < row; i++) {
 			for(let j = 0; j < col; j++) {
-				let levelNum = (groupNum - 1) * 12 + (i * 4 + j + 1); 
+				let levelNum = (groupNum - 1) * 12 + (i * 4 + j + 1);
+
 				var btn:LevelSelButtonView = new LevelSelButtonView(levelNum);
 				btn.enabled = levelNum <= GameData.levelNum ? true: false;
 				btn.setStar(GameData.getStarLevelGrade(levelNum));
 				btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_selLevelBtn, this);
+
 				this['levelBtnGroup'+ groupNum].addChild(btn);
 				this._allSelButton[levelNum-1] = btn;
 			}
@@ -85,10 +87,8 @@ class LevelView extends eui.Component{
 	}
 	private tap_selLevelBtn(evt) {
 		this.hide();
-		let levelSelBtn = evt.currentTarget;
-		let levelNum = levelSelBtn.levelNum;
 		let lve:LevelViewEvent = new LevelViewEvent(LevelViewEvent.TAP_SEL_LEVEL_BUTTON);
-		lve.levelNum = levelNum;
+		lve.levelNum = evt.currentTarget.levelNum;
 		this._dispatcher.dispatchEvent(lve)
 	}
 	

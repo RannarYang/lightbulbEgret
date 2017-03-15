@@ -14,6 +14,10 @@ class LevelSelButtonView extends eui.Button {
 			this.setLevelText();
 		}
 	}
+	public setStar(starNum) {
+
+		this.starImage.texture = RES.getRes('star' + starNum + '_s_png');
+	}
 	private setLevelText() {
 		let leveltext = this._levelNum < 10 ? '0' + this._levelNum : '' + this.levelNum;
 		this.num0.texture = RES.getRes('num' + leveltext[0] + '_png');
@@ -21,9 +25,5 @@ class LevelSelButtonView extends eui.Button {
 	}
 	public get levelNum() {
 		return this._levelNum;
-	}
-	public setStar(starNum) {
-
-		this.starImage.texture = RES.getRes('star' + starNum + '_s_png');
 	}
 }

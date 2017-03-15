@@ -53,14 +53,15 @@ class GameLogic {
 
 		this._sound = RES.getRes("win_mp3");
 
-		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.SKIP_GUIDE, this.skip_guide, this);
-		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.SUCCESS, this.success, this);
-		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_SEL_LEVEL_BUTTON, this.tap_selLevelButton, this);
-		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_REPLAY_BUTTON, this.tap_replayButton, this);
-		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_PROP_BUTTON, this.tap_propButton, this);
-		this._propView.propViewDispatcher.addEventListener(PropViewEvent.TAP_PART_LINE_BUTTON, this.tap_partLineButton,this);
-		this._propView.propViewDispatcher.addEventListener(PropViewEvent.TAP_SHOW_LINE_BUTTON, this.tap_showLineButton,this);
-		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_SOUND_BUTTON, this.tap_soundButton, this);
+		this._mainView.dispatcher.addEventListener(MainViewEvent.SKIP_GUIDE, this.skip_guide, this);
+		this._mainView.dispatcher.addEventListener(MainViewEvent.SUCCESS, this.success, this);
+		this._mainView.dispatcher.addEventListener(MainViewEvent.TAP_SEL_LEVEL_BUTTON, this.tap_selLevelButton, this);
+		this._mainView.dispatcher.addEventListener(MainViewEvent.TAP_REPLAY_BUTTON, this.tap_replayButton, this);
+		this._mainView.dispatcher.addEventListener(MainViewEvent.TAP_PROP_BUTTON, this.tap_propButton, this);
+		this._mainView.dispatcher.addEventListener(MainViewEvent.TAP_SOUND_BUTTON, this.tap_soundButton, this);
+
+		this._propView.dispatcher.addEventListener(PropViewEvent.TAP_PART_LINE_BUTTON, this.tap_partLineButton,this);
+		this._propView.dispatcher.addEventListener(PropViewEvent.TAP_SHOW_LINE_BUTTON, this.tap_showLineButton,this);
 		
 		this._levelView.dispatcher.addEventListener(LevelViewEvent.TAP_SEL_LEVEL_BUTTON, this.tap_selLevelButtonInLevelView, this);
 		this._levelView.dispatcher.addEventListener(LevelViewEvent.TAP_ENDLESS_BUTTON, this.tap_endlessButton, this);
@@ -134,7 +135,6 @@ class GameLogic {
 		this._propView.show();
 	}
 	private tap_soundButton(evt: MainViewEvent) {
-		// console.log(evt.soundOn);
 		GameData.soundOn = evt.soundOn;
 	}
 	private tap_partLineButton() {

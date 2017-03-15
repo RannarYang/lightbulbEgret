@@ -3,33 +3,17 @@ class GridElementView extends egret.Sprite{
 	private yIndex: number;
 	private _squareShape: egret.Shape;
 	private _roadShape: egret.Shape;
+	private _tipsLineShape: egret.Shape;
 	private _elementImg: egret.Bitmap;
 
-	private _tipsLineShape: egret.Shape;
 	public constructor(xIndex, yIndex){
 		super();
 		this.xIndex = xIndex;
 		this.yIndex = yIndex;
 		this.init();
-		this.touchEnabled = true;
-	}
-	public setLight() {
-		if(this.element.kind === 'light' || this.element.kind === 'unlight') {
-			this._elementImg.texture = RES.getRes('light_png');
-		}
-		// add roadShape
-		this.changeRoadShape(true);
-	}
-	public setUnlight() {
-		if(this.element.kind === 'light' || this.element.kind === 'unlight') {
-			this._elementImg.texture = RES.getRes('unlight_png');
-		}
-		this.changeRoadShape(false);
-	}
-	public get element() :GridElement {
-		return GameData.elements[this.xIndex][this.yIndex]
 	}
 	private init() {
+		this.touchEnabled = true;
 		let element = this.element;
 		// add square
 		let squareShape: egret.Shape = this._squareShape = new egret.Shape();
@@ -50,9 +34,9 @@ class GridElementView extends egret.Sprite{
 		// add Image
 		this._elementImg = new egret.Bitmap();
 		if(element.kind !== 'wine') {
-			let key = (element.kind === 'light') || (element.kind === 'unlight') ? 'lightSize' : 'powerSize';
+			let key = element.kind + 'Size';
 			this._elementImg.touchEnabled = false;
-			this._elementImg.texture = RES.getRes(element.kind + '_png');
+			this._elementImg.texture = element.kind === 'light' ? RES.getRes('un' + element.kind + '_png') : RES.getRes(element.kind + '_png');
 			this._elementImg.x = GameData[key].bitmapX;
 			this._elementImg.y = GameData[key].bitmapY;
 			this._elementImg.scaleX = GameData[key].bitmapScale;
@@ -60,6 +44,35 @@ class GridElementView extends egret.Sprite{
 			this.addChild(this._elementImg);
 		}
 		
+	}
+	public setLight() {
+		if(this.element.kind === 'light') {
+			this._elementImg.texture = RES.getRes('light_png');
+		}
+		// add roadShape
+		this.changeRoadShape(true);
+	}
+	public setUnlight() {
+		if(this.element.kind === 'light') {
+			this._elementImg.texture = RES.getRes('unlight_png');
+		}
+		this.changeRoadShape(false);
+	}
+	public get element() :GridElement {
+		return GameData.elements[this.xIndex][this.yIndex]
+	}
+	
+	public addTipsLine() {
+		let tipsLineShape = this._tipsLineShape;
+		tipsLineShape.graphics.clear();
+		let element = this.element;
+		tipsLineShape.graphics.lineStyle(2, GameData.tipColor);
+		let shapeinfo_line = element.type.line;
+		for (var i = 0; i < shapeinfo_line.length; i++) {
+            tipsLineShape.graphics.lineTo(shapeinfo_line[i].front[0] * GameData.brickwidth, shapeinfo_line[i].front[1] * GameData.brickwidth);
+            tipsLineShape.graphics.lineTo(shapeinfo_line[i].to[0] * GameData.brickwidth, shapeinfo_line[i].to[1] * GameData.brickwidth);
+        }
+		tipsLineShape.rotation = this.element.des_rot;
 	}
 	public rotate() {
 		this.touchEnabled = false;
@@ -72,18 +85,6 @@ class GridElementView extends egret.Sprite{
 		});
 		
 		
-	}
-	public addTipsLine() {
-		let tipsLineShape = this._tipsLineShape;
-		tipsLineShape.graphics.clear();
-		let element = this.element;
-		tipsLineShape.graphics.lineStyle(2, GameData.tipColor);
-		let shapeinfo_line = element.type.line;
-		for (var i = 0; i < shapeinfo_line.length; i++) {
-            tipsLineShape.graphics.lineTo(shapeinfo_line[i].front[0] * GameData.brickwidth, shapeinfo_line[i].front[1] * GameData.brickwidth);
-            tipsLineShape.graphics.lineTo(shapeinfo_line[i].to[0] * GameData.brickwidth, shapeinfo_line[i].to[1] * GameData.brickwidth);
-        }
-		tipsLineShape.rotation = this.element.des_rot;
 	}
 	public rotateToDes(callback = () => {}) {
 		// 背景变灰表示不可点击

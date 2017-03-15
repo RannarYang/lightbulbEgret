@@ -61,25 +61,26 @@ class GameData {
 	}
 	/* ====== userData 需要存数据库的数据 end ========= */
 	// level config
+	public static levelPageNum : number = 2;
+	public static nowLevel: number = 0;
+
 	public static line: number = 0;
 	public static col: number = 0;
 	public static elements: GridElement[][];
 
-	public static brickwidth: number;
-	public static roadwidth: number;
-	public static leftwidth: number;
-
-	public static lightNum:number;
-	public static nowLightNum:number = 0;
-	public static nowLight: GridElement[] = [];
-	public static linkPoint = [];
+	public static lightNum:number; // 当前关卡的所有灯泡数量
+	public static nowLight: GridElement[] = []; // 现在已经连通的元素
 
 	public static powerState = {x: 0, y: 0};
 
-	public static stageW: number = 0;
-	public static stageH: number = 0;
+	// 道具
+	public static sureGridArr = [];
+	// 星星等级
+	public static starConfig: any;
+	// sound
+	public static soundOn = true;
 
-	// view config
+	/* ====== view Config 界面元素 begin ========= */
 	public static frameColor : number;
     public static squareFillColor : number;
 	public static squareUnableFillColor : number;
@@ -92,9 +93,9 @@ class GameData {
     public static leftPercent : number;
     public static leftRoadPercent : number;
 
-	public static levelPageNum : number = 2;
-	public static nowLevel: number = 0;
-	public static starConfig: any;
+	public static brickwidth: number;
+	public static roadwidth: number;
+	public static leftwidth: number;
 	public static lightSize = {
 		bitmapX: 0,
 		bitmapY: 0,
@@ -106,11 +107,11 @@ class GameData {
 		bitmapScale: 1
 	}
 
-	// 道具
-	public static sureGridArr = [];
-	// sound
-	public static soundOn = true;
-	
+	public static stageW: number = 0;
+	public static stageH: number = 0;
+
+	/* ====== view Config 界面元素 end ========= */
+
 	private static levelNumObserver = [];
 	public static setLevelNumObserver(observer) {
 		GameData.levelNumObserver.push(observer);
@@ -119,9 +120,7 @@ class GameData {
 	public static initData() {
 		this.elements = [];
 		this.lightNum = 0;
-		this.nowLightNum = 0;
 		this.nowLight = [];
-		this.linkPoint = [];
 		GameData.stageW = 640;
 		GameData.stageH = 960;
 	}

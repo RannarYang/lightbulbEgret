@@ -4,13 +4,16 @@ class CongradulationView extends eui.Component{
 	public constructor() {
 		super();
 		this.skinName = userSkins.CongradulationViewSkin;
-		this.hide();
-		this._dispatcher = new egret.EventDispatcher();
+		this.init();
 	}
 	public partAdded(partName: string,instance: any): void { 
 		if(instance === this.sure_btn) {
 			this.sure_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_sureBtn, this);
 		}
+	}
+	private init() {
+		this.hide();
+		this._dispatcher = new egret.EventDispatcher();
 	}
 	public get dispatcher() {
 		return this._dispatcher;

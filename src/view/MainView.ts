@@ -1,20 +1,19 @@
 class MainView extends eui.Component{
-	private elementWidth: number;
+	private _dispatcher: egret.EventDispatcher;
+
 	private gameViewGroup: eui.Group;
+	private _gameViewContainer: egret.Sprite;
 	private gameButtonGroup: eui.Group;
 	private selLevelButton: eui.Button;
 	private replayButton: eui.Button;
 	private propButton: eui.Button;
 	private soundButton: eui.Button;
-	private guideElement: eui.Component;
 	private levelNumGroup: eui.Group;
 	private level_num1_Image: eui.Image;
 	private level_num2_Image: eui.Image;
 
-	private _gameViewContainer: egret.Sprite;
 	private _gevm: GridElementViewManage;
-
-	private _mainViewDispatcher: egret.EventDispatcher;
+	private guideElement: eui.Component;
 
 	private _startTime: Date;
 	public constructor() {
@@ -41,8 +40,8 @@ class MainView extends eui.Component{
 			this.gameButtonGroup.y =  GameData.brickwidth * GameData.line + 170;
 		}
 	}
-	public get mainViewDispatcher() {
-		return this._mainViewDispatcher;
+	public get dispatcher() {
+		return this._dispatcher;
 	}
 	public usePartLineProp() {
 		this._gevm.usePartLineProp();
@@ -59,7 +58,6 @@ class MainView extends eui.Component{
 	public newGridElementView() {
 		this._startTime = new Date();
 		this.setLevelNumImage();
-		this.gameViewGroup.removeChild(this._gameViewContainer);
 		this.initGameViewGroup();
 		this.gameButtonGroup.y =  GameData.brickwidth * GameData.line + 170;
 		this.reLink();
@@ -87,13 +85,13 @@ class MainView extends eui.Component{
 		this.addChild(guideElement);
 	}
 	private init() {
-		this._mainViewDispatcher = new egret.EventDispatcher();	
+		this._dispatcher = new egret.EventDispatcher();	
 		this.initGameViewGroup();
 	}
 	private initGameViewGroup() {
 		let line = GameData.line;
 		let col = GameData.col;
-		
+		this._gameViewContainer && this.gameViewGroup.removeChild(this._gameViewContainer);
 		let gameViewContainer = this._gameViewContainer = new egret.Sprite();
 		this._gevm = new GridElementViewManage(gameViewContainer);
 		gameViewContainer.x = (GameData.stageW - GameData.brickwidth * col) / 2; // 游戏区域居中
@@ -102,20 +100,20 @@ class MainView extends eui.Component{
 	}
 	private tap_selLevelButton() {
 		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_SEL_LEVEL_BUTTON);
-		this._mainViewDispatcher.dispatchEvent(mvt);
+		this._dispatcher.dispatchEvent(mvt);
 	}
 	private tap_replayButton() {
 		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_REPLAY_BUTTON);
-		this._mainViewDispatcher.dispatchEvent(mvt);
+		this._dispatcher.dispatchEvent(mvt);
 	}
 	private tap_propButton() {
 		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_PROP_BUTTON);
-		this._mainViewDispatcher.dispatchEvent(mvt);
+		this._dispatcher.dispatchEvent(mvt);
 	}
 	private tap_soundButton(evt:egret.TouchEvent) {
 		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_SOUND_BUTTON);
 		mvt.soundOn = !evt.target.selected;
-		this._mainViewDispatcher.dispatchEvent(mvt);
+		this._dispatcher.dispatchEvent(mvt);
 	}
 	private tap_gridelement(evt) {
 		let xIndex = evt.xIndex;
@@ -126,11 +124,22 @@ class MainView extends eui.Component{
 		// unlind bulb 
 		this.reLink();
 
-		if (LinkLogic.isSuccess()){
+		
+	}
+	private setLevelNumImage() {
+		let leveltext = (GameData.nowLevel < 10) ? '0' + GameData.nowLevel : '' + GameData.nowLevel;
+		this.level_num1_Image.texture = RES.getRes(leveltext[0] + '_png');
+		this.level_num2_Image.texture = RES.getRes(leveltext[1] + '_png');
+	}
+	private reLink() {
+		this._gevm.unlightBulb();
+		let isSuccess = LinkLogic.link();
+		this._gevm.lightBulb();
+		if (isSuccess){
 			if(this.currentState === 'guide') {
 				this.enabled = false;
 				let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.SKIP_GUIDE);
-				this._mainViewDispatcher.dispatchEvent(mvt)
+				this._dispatcher.dispatchEvent(mvt)
 				this.removeChild(this.guideElement);
 			} else {
 				let endTime = new Date();
@@ -152,20 +161,10 @@ class MainView extends eui.Component{
 				var star_num = ( isUsePartLineProp || isUseShowLineProp ) ? 3:3 - getGrade;
 				let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.SUCCESS);
 				mvt.starNum = star_num;
-				this._mainViewDispatcher.dispatchEvent(mvt)
+				this._dispatcher.dispatchEvent(mvt)
 			}
 			
 		}
-	}
-	private setLevelNumImage() {
-		let leveltext = (GameData.nowLevel < 10) ? '0' + GameData.nowLevel : '' + GameData.nowLevel;
-		this.level_num1_Image.texture = RES.getRes(leveltext[0] + '_png');
-		this.level_num2_Image.texture = RES.getRes(leveltext[1] + '_png');
-	}
-	private reLink() {
-		this._gevm.unlightBulb();
-		LinkLogic.link();
-		this._gevm.lightBulb();
 	}
 
 }

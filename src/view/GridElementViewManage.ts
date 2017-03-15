@@ -20,6 +20,14 @@ class GridElementViewManage extends egret.EventDispatcher{
 		let sureGridArr = JSON.parse(JSON.stringify(GameData.sureGridArr));
 		this.rotateElementToDes(sureGridArr);
 	}
+	public useShowLineProp() {
+		let elementView = this._elementViews;
+		for(let i = 0; i < elementView.length; i++) {
+			for(let j = 0; j < elementView[i].length; j++) {
+				elementView[i][j].addTipsLine();
+			}
+		}
+	}
 	private rotateElementToDes(sureGridArr) {
 		let sureGrid = sureGridArr.pop();
 		if(sureGrid) {
@@ -31,14 +39,7 @@ class GridElementViewManage extends egret.EventDispatcher{
 			});
 		}
 	}
-	public useShowLineProp() {
-		let elementView = this._elementViews;
-		for(let i = 0; i < elementView.length; i++) {
-			for(let j = 0; j < elementView[i].length; j++) {
-				elementView[i][j].addTipsLine();
-			}
-		}
-	}
+	
 	private init() {
 		let line = GameData.line;
 		let col = GameData.col;
@@ -66,7 +67,20 @@ class GridElementViewManage extends egret.EventDispatcher{
 			}
 		}
 	}
-	
+	public lightBulb() {
+		for(let i = 0; i < GameData.nowLight.length; i++) {
+			let lightElement = GameData.nowLight[i];
+			let elementView = this.getElementViews(lightElement.xIndex, lightElement.yIndex);
+			elementView.setLight();
+		}
+	}
+	public unlightBulb() {
+		for(let i = 0; i < GameData.nowLight.length; i++) {
+			let lightElement = GameData.nowLight[i];
+			let elementView = this.getElementViews(lightElement.xIndex, lightElement.yIndex);
+			elementView.setUnlight();
+		}
+	}
 	private addElementView(i, j) {
 		let elementView = new GridElementView(i, j);
 		this._elementViews[i][j] = elementView;
@@ -86,19 +100,5 @@ class GridElementViewManage extends egret.EventDispatcher{
 
 		elementView.rotate();
 	}
-	public lightBulb() {
-		for(let i = 0; i < GameData.nowLight.length; i++) {
-			let lightElement = GameData.nowLight[i];
-			let elementView = this.getElementViews(lightElement.xIndex, lightElement.yIndex);
-			elementView.setLight();
-		}
-	}
-	public unlightBulb() {
-		for(let i = 0; i < GameData.nowLight.length; i++) {
-			let lightElement = GameData.nowLight[i];
-			let elementView = this.getElementViews(lightElement.xIndex, lightElement.yIndex);
-			elementView.setUnlight();
-		}
-		GameData.nowLight = [];
-	}
+	
 }

@@ -3,12 +3,12 @@ class PropView extends eui.Component{
 	private partLineButton: eui.Button;
 	private showLineButton: eui.Button;
 
-	private _propViewDispatcher: egret.EventDispatcher;
+	private _dispatcher: egret.EventDispatcher;
 	public constructor() {
 		super();
 		this.skinName = userSkins.PropViewSkin;
 		this.init();
-		this.hide();
+		
 	}
 	public partAdded(partName: string,instance: any): void {
 		if (instance === this.closeButton) {
@@ -21,14 +21,16 @@ class PropView extends eui.Component{
 			this.showLineButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_showLineButton,this);
 		}
 	}
+	
+	private init() {
+		this._dispatcher = new egret.EventDispatcher();
+		this.hide();
+	}
+	public get dispatcher() {
+		return this._dispatcher;
+	}
 	public show() {
 		this.visible = true;
-	}
-	public get propViewDispatcher() {
-		return this._propViewDispatcher;
-	}
-	private init() {
-		this._propViewDispatcher = new egret.EventDispatcher();
 	}
 	private hide() {
 		this.visible = false;
@@ -37,16 +39,13 @@ class PropView extends eui.Component{
 		this.hide();
 	}
 	private tap_partLineButton() {
-		// console.log('tap_partLineButton');
 		this.hide();
 		let mvt:PropViewEvent = new PropViewEvent(PropViewEvent.TAP_PART_LINE_BUTTON);
-		this._propViewDispatcher.dispatchEvent(mvt)
+		this._dispatcher.dispatchEvent(mvt)
 	}
 	private tap_showLineButton() {
-		// console.log('tap_showLineButton');
 		this.hide();
 		let mvt:PropViewEvent = new PropViewEvent(PropViewEvent.TAP_SHOW_LINE_BUTTON);
-		this._propViewDispatcher.dispatchEvent(mvt)
-		
+		this._dispatcher.dispatchEvent(mvt)
 	}
 }

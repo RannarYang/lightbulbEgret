@@ -10,8 +10,7 @@ class SuccessView extends eui.Component{
 	public constructor() {
 		super();
 		this.skinName = userSkins.SuccessViewSkin;
-		this.hide();
-		this._dispatcher = new egret.EventDispatcher();
+		this.init();
 	}
 	public partAdded(partName: string,instance: any): void { 
 		if(instance === this.nextlevel_btn) {
@@ -22,16 +21,20 @@ class SuccessView extends eui.Component{
 			this.share_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_shareBtn, this);
 		}
 	}
+	private init() {
+		this.hide();
+		this._dispatcher = new egret.EventDispatcher();
+	}
+	public get dispatcher() {
+		return this._dispatcher;
+	}
 	public show(starGrade:number) {
 		this.starImage.texture = RES.getRes('star' + starGrade + '_s_png');
 		this.visible = true;
 		this.showIt.play(1);
 	}
-	public hide() {
+	private hide() {
 		this.visible = false;
-	}
-	public get dispatcher() {
-		return this._dispatcher;
 	}
 	private tap_nextLevelBtn() {
 		let sve:SuccessViewEvent = new SuccessViewEvent(SuccessViewEvent.TAP_NEXT_LEVEL_BUTTON);
