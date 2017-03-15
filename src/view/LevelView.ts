@@ -60,6 +60,7 @@ class LevelView extends eui.Component{
 				let levelNum = (groupNum - 1) * 12 + (i * 4 + j + 1); 
 				var btn:LevelSelButtonView = new LevelSelButtonView(levelNum);
 				btn.enabled = levelNum <= GameData.levelNum ? true: false;
+				btn.setStar(GameData.getStarLevelGrade(levelNum));
 				btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_selLevelBtn, this);
 				this['levelBtnGroup'+ groupNum].addChild(btn);
 				this._allSelButton[levelNum-1] = btn;

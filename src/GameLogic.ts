@@ -13,7 +13,10 @@ class GameLogic {
 		this.init();
 	}
 	private init(){
-		GameData.initData(); // 初始化数据
+		// 初始化数据
+		GameData.initData(); 
+		// 用户的信息
+		GameData.initUserData();
 
 		// 读取view信息
 		let viewConfigData = RES.getRes('viewConfig_json');
@@ -104,11 +107,11 @@ class GameLogic {
 		this.useProp();
 	}
 	private useProp() {
-		if(GameData.propPartLine.indexOf(GameData.nowLevel) !== -1) {
+		if(GameData.getPropPartLine(GameData.nowLevel)) {
 			PropLogic.usePartGridProp();
 			this._mainView.usePartLineProp();
 		}
-		if(GameData.propShowLine.indexOf(GameData.nowLevel) !== -1) {
+		if(GameData.getPropShowLine(GameData.nowLevel)) {
 			this._mainView.useShowLineProp();
 		}
 	}
@@ -130,15 +133,15 @@ class GameLogic {
 		GameData.soundOn = evt.soundOn;
 	}
 	private tap_partLineButton() {
-		if(GameData.propPartLine.indexOf(GameData.nowLevel) === -1) {
-			GameData.propPartLine.push(GameData.nowLevel);
+		if(!GameData.getPropPartLine(GameData.nowLevel)) {
+			GameData.addPropPartLine(GameData.nowLevel);
 			PropLogic.usePartGridProp();
 			this._mainView.usePartLineProp();
 		}
 	}
 	private tap_showLineButton() {
-		if(GameData.propShowLine.indexOf(GameData.nowLevel) === -1) {
-			GameData.propShowLine.push(GameData.nowLevel);
+		if(!GameData.getPropShowLine(GameData.nowLevel)) {
+			GameData.addPropShowLine(GameData.nowLevel);
 		}
 		this._mainView.useShowLineProp();
 	}

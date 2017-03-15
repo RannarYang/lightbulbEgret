@@ -1,7 +1,65 @@
 class GameData {
-	// userConfig 
-	public static propPartLine: number[] = [];
-	public static propShowLine: number[] = [];
+	/* ====== userData 需要存数据库的数据 begin ========= */
+	// propPartLine
+	private static _propPartLine: number[] = [];
+	public static getPropPartLine(nowLevel):boolean {
+		return GameData._propPartLine.indexOf(nowLevel) !== -1;
+	}
+	public static addPropPartLine(nowLevel) {
+		if(this._propPartLine.indexOf(nowLevel) === -1) {
+			this._propPartLine.push(nowLevel);
+			GameData.storage();
+		}
+	}
+
+	// propShowLine
+	private static _propShowLine: number[] = [];
+	public static getPropShowLine(nowLevel): boolean{
+		return GameData._propShowLine.indexOf(nowLevel) !== -1;
+	}
+	public static addPropShowLine(nowLevel) {
+		if(this._propShowLine.indexOf(nowLevel) === -1) {			
+			this._propShowLine.push(nowLevel);
+			GameData.storage();
+		}
+	}
+
+	// starlevelGrade
+	private static _starlevelGrade: number[] = [];
+	public static setStarlevelGrade(levelNum, starNum) {
+		this._starlevelGrade[levelNum] = Math.max(this._starlevelGrade[levelNum] || 0, starNum);
+		for(let i = 0; i < GameData.levelNumObserver.length; i++) {
+			GameData.levelNumObserver[i].update()
+		}
+		GameData.storage();
+	}
+	public static getStarLevelGrade(levelNum) {
+		return this._starlevelGrade[levelNum] || 0;
+	}
+	// levelNum
+	private static _levelNum: number = 1; // 当前可玩关卡
+	public static set levelNum(levelNum) {
+		if(levelNum <= 24) {
+			GameData._levelNum = levelNum;
+		} else {
+			// 开启无尽模式
+			GameData._levelEndless = true;
+		}
+		for(let i = 0; i < GameData.levelNumObserver.length; i++) {
+			GameData.levelNumObserver[i].update()
+		}
+		GameData.storage();
+		
+	}
+	public static get levelNum() {
+		return this._levelNum;
+	}
+	// levelEndless
+	private static _levelEndless: boolean = false;
+	public static get levelEndless():boolean {
+		return this._levelEndless;
+	}
+	/* ====== userData 需要存数据库的数据 end ========= */
 	// level config
 	public static line: number = 0;
 	public static col: number = 0;
@@ -52,6 +110,11 @@ class GameData {
 	public static sureGridArr = [];
 	// sound
 	public static soundOn = true;
+	
+	private static levelNumObserver = [];
+	public static setLevelNumObserver(observer) {
+		GameData.levelNumObserver.push(observer);
+	}
 
 	public static initData() {
 		this.elements = [];
@@ -61,37 +124,26 @@ class GameData {
 		this.linkPoint = [];
 		GameData.stageW = 640;
 		GameData.stageH = 960;
-
 	}
-	private static _starlevelGrade: number[] = [];
-	public static setStarlevelGrade(levelNum, starNum) {
-		this._starlevelGrade[levelNum] = Math.max(this._starlevelGrade[levelNum] || 0, starNum);
-		for(let i = 0; i < GameData.levelNumObserver.length; i++) {
-			GameData.levelNumObserver[i].update()
-		}
+	// 把数据存储到本地：
+	public static storage() {
+		localStorage.setItem('propPartLine', JSON.stringify(GameData._propPartLine));
+		localStorage.setItem('propShowLine', JSON.stringify(GameData._propShowLine));
+		localStorage.setItem('levelNum', JSON.stringify(GameData._levelNum));
+		localStorage.setItem('levelEndless', JSON.stringify(GameData._levelEndless));
+		localStorage.setItem('starlevelGrade', JSON.stringify(GameData._starlevelGrade));
 	}
-	public static getStarLevelGrade(levelNum) {
-		return this._starlevelGrade[levelNum] || 0;
-	}
-	private static _levelNum: number = 1; // 当前可玩关卡
-	public static levelEndless: boolean = false;
-	private static levelNumObserver = [];
-	public static setLevelNumObserver(observer) {
-		GameData.levelNumObserver.push(observer);
-	}
-	public static set levelNum(levelNum) {
-		if(levelNum <= 24) {
-			GameData._levelNum = levelNum;
-		} else {
-			// 开启无尽模式
-			GameData.levelEndless = true;
-		}
-		for(let i = 0; i < GameData.levelNumObserver.length; i++) {
-			GameData.levelNumObserver[i].update()
-		}
-		
-	}
-	public static get levelNum() {
-		return this._levelNum;
+	public static initUserData() {
+		GameData._propPartLine = JSON.parse(localStorage.getItem('propPartLine'));
+		GameData._propPartLine = GameData._propPartLine.filter((val)=>{
+			return val <= 24;
+		})
+		GameData._propShowLine = JSON.parse(localStorage.getItem('propShowLine'));
+		GameData._propShowLine = GameData._propShowLine.filter((val) => {
+			return val <= 24;
+		})
+		GameData._levelNum = JSON.parse(localStorage.getItem('levelNum'));
+		GameData._levelEndless = JSON.parse(localStorage.getItem('levelEndless'));
+		GameData._starlevelGrade = JSON.parse(localStorage.getItem('starlevelGrade'));
 	}
 }

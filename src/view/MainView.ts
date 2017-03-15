@@ -143,8 +143,8 @@ class MainView extends eui.Component{
 						break;
 					}
 				}
-				let isUsePartLineProp = GameData.propPartLine.indexOf(GameData.nowLevel) !== -1;
-				let isUseShowLineProp = GameData.propShowLine.indexOf(GameData.nowLevel) !== -1;
+				let isUsePartLineProp = GameData.getPropPartLine(GameData.nowLevel);
+				let isUseShowLineProp = GameData.getPropShowLine(GameData.nowLevel);
 				var star_num = ( isUsePartLineProp || isUseShowLineProp ) ? 3:3 - getGrade;
 				let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.SUCCESS);
 				mvt.starNum = star_num;
