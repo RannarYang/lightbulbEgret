@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="userSkins.ShowLineButtonSkin" states="up,down,disabled" minHeight="50" minWidth="100" currentState="up" xmlns:e="http://ns.egret.com/eui" width="290" height.up="85" height.down="85" height="85">
+    <e:Image width="100%" height="100%" scale9Grid="1,3,8,8" alpha.disabled="0.5"
+            
+             anchorOffsetX="0" x="0" y="0" source="showline_btn_png" source.down="showline_btn_png" source.disabled="showline_btn_png"/>
+</e:Skin>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="userSkins.PropButtonSkin" states="up,down,disabled" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" width="108" height.up="194" height.down="194" height="194">
+    <e:Image width="100%" height="100%" scale9Grid="1,3,8,8" alpha.disabled="0.5"
+            
+             anchorOffsetX="0" x="0" y="0" source="tool_icon_png" source.down="tool_icon_png" source.disabled="tool_icon_png"/>
+</e:Skin>

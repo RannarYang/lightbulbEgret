@@ -1,0 +1,1951 @@
+{
+    "level_def" : [
+            {
+                "line": 1,
+                "col": 2,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 90},
+                        {"type": 4,"kind": "power","init_rot": 0}
+                    ]
+                ],
+                "trueRot":[180,0]
+            },
+            {
+                "line": 2,
+                "col": 2,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 270},
+                        {"type": 1,"kind": "unlight","init_rot": 270}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180,"rot": 180},
+                        {"type": 4,"kind": "power","init_rot": 0,"rot": 0}
+                    ]
+                ],
+                "trueRot":[270,270,180,90]
+            },
+            {
+                "line": 3,
+                "col": 3,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 270},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "power","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ]
+                ],
+                "trueRot":[180,0,270,270,270,180,90,720,90]
+            },
+            {
+                "line": 3,
+                "col": 3,
+                "square": [
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 2,"kind": "wine","init_rot": 270},
+                        {"type": 2,"kind": "power","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ]
+                ],
+                "trueRot":[270,90,0,270,90,270,90,90,90]
+            },
+            {
+                "line": 4,
+                "col": 4,
+                "square": [
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "power","type": 4,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 0}
+                    ]
+                ],
+                "trueRot":[270,90,0,270,270,270,0,180,270,90,270,90,90,180,270,0]
+            },
+            {
+                "line": 4,
+                "col": 4,
+                "square": [
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 4,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "power","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ]
+                ],
+                "trueRot":[270,0,0,0,0,180,0,270,270,270,180,270,90,90,90,90]
+            },
+            {
+                "line": 4,
+                "col": 4,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0}
+                    ],
+                    [
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "power","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0}
+                    ]
+                ],
+                "trueRot":[270,720,720,720,0,0,270,0,180,90,90,720,180,90,720,720]
+            },
+            {
+                "line": 5,
+                "col": 4,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 1,"kind": "power","init_rot": 270},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0}
+                    ],
+                    [
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "unlight","init_rot": 180}
+                    ],
+                    [
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 90},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ]
+                ],
+                "trueRot":[270,180,90,0,90,270,270,270,270,180,180,270,180,180,180,270,180,0,90,90]
+            },
+            {
+                "line": 5,
+                "col": 4,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 270},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "power","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 90},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ]
+                ],
+                "trueRot":[180,0,0,0,180,0,270,180,180,180,90,270,270,90,90,270,180,0,0,90]
+            },
+            {
+                "line": 5,
+                "col": 4,
+                "square": [
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 180}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 4,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "power","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ]
+                ],
+                "trueRot":[270,270,180,0,270,0,0,270,270,0,90,90,0,180,0,0,90,90,90,90]
+            },
+            {
+                "line": 6,
+                "col": 5,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 270},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 90},
+                        {"type": 4,"kind": "power","init_rot": 0},
+                        {"type": 3,"kind": "unlight","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 90},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "unlight","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ]
+                ],
+                "trueRot":[270,270,0,0,270,180,180,180,90,270,270,180,180,0,270,90,180,90,90,270,270,0,0,0,270,90,180,270,180,90]
+            },
+            {
+                "line": 6,
+                "col": 5,
+                "square": [
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 270},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "power","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 90},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 90},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ]
+                ],
+                "trueRot":[270,0,0,0,0,180,90,180,0,270,180,180,180,270,90,180,270,0,270,0,270,180,180,270,270,180,0,270,90,90]
+            },
+            {
+                "line": 6,
+                "col": 5,
+                "square": [
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 270},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ],
+                    [
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "power","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 90},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 2,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 90},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ]
+                ],
+                "trueRot":[270,90,0,0,270,90,90,270,90,270,90,270,90,180,180,270,90,0,0,270,90,270,90,270,270,180,90,180,270,90]
+            },
+            {
+                "line": 6,
+                "col": 5,
+                "square": [
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 270},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 0}
+                    ],
+                    [
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 3,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "power","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 0},
+                        {"type": 1,"kind": "unlight","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ],
+                    [
+                        {"type": 3,"kind": "wine","init_rot": 90},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 0},
+                        {"type": 4,"kind": "wine","init_rot": 180},
+                        {"type": 4,"kind": "wine","init_rot": 180}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 90},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 2,"kind": "wine","init_rot": 0},
+                        {"type": 3,"kind": "wine","init_rot": 180},
+                        {"type": 1,"kind": "unlight","init_rot": 180}
+                    ]
+                ],
+                "trueRot":[270,0,270,270,0,90,90,270,0,0,90,0,270,180,90,270,90,270,90,270,0,0,90,270,90,180,0,0,270,0]
+            },
+            {
+                "line": 6,
+                "col": 5,
+                "square": [
+                    [
+                        {"kind": "wine","type": "5","init_rot": 0},
+                        {"kind": "wine","type": "5","init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": "5","init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "power","type": 3,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ]
+                ],
+                "trueRot":[0,180,270,270,0,180,270,180,180,270,270,180,0,90,270,0,90,270,180,270,90,90,270,0,180,90,180,270,90,90]
+            },
+            {
+                "line": 7,
+                "col": 6,
+                "square": [
+                    [
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 4,"init_rot": 180}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "power","type": 3,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 0}
+                    ]
+                ],
+                "trueRot":[720,180,90,90,0,270,720,180,90,90,0,90,270,180,90,0,0,0,90,270,0,0,0,0,180,270,270,180,180,90,270,720,720,270,0,0,180,0,180,270,270,0]
+            },
+            {
+                "line": 7,
+                "col": 6,
+                "square": [
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "power","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 4,"init_rot": 180},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ]
+                ],
+                "trueRot":[180,90,90,90,0,0,180,90,90,270,270,90,270,90,180,0,180,270,270,90,90,90,0,180,90,0,0,180,90,90,270,0,0,0,0,0,90,180,0,180,0,0]
+            },
+            {
+                "line": 7,
+                "col": 6,
+                "square": [
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 0}
+                    ],
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 4,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 180}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "power","type": 2,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 4,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "wine","type": 2,"init_rot": 270}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 2,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 180},
+                        {"kind": "wine","type": 3,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 90}
+                    ],
+                    [
+                        {"kind": "wine","type": 2,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "unlight","type": 1,"init_rot": 0},
+                        {"kind": "wine","type": 3,"init_rot": 270},
+                        {"kind": "wine","type": 4,"init_rot": 180}
+                    ],
+                    [
+                        {"kind": "unlight","type": 1,"init_rot": 180},
+                        {"kind": "unlight","type": 1,"init_rot": 90},
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 2,"init_rot": 180},
+                        {"kind": "wine","type": 4,"init_rot": 90},
+                        {"kind": "unlight","type": 1,"init_rot": 180}
+                    ]
+                ],
+                "trueRot":[180,0,180,90,0,270,270,90,0,90,0,180,90,90,0,90,180,270,270,90,90,90,90,270,270,270,270,90,180,90,90,90,90,90,0,0,90,180,180,180,90,90]
+            },
+            {
+                "line": 7,
+                "col": 6,
+                "square": [
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }],
+                    [{
+                        "kind": "power",
+                        "type": 2,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 180
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }]
+                ],
+                "trueRot":[270,90,90,0,90,0,90,270,0,0,90,90,270,90,180,0,0,0,0,90,0,270,0,0,90,0,0,90,180,0,90,180,0,90,180,0,180,0,0,180,0,0]
+            },
+            {
+                "line": 7,
+                "col": 6,
+                "square": [
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "power",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 180
+                    }]
+                ],
+                "trueRot":[720,270,720,270,270,270,270,270,90,180,270,90,270,270,90,0,270,90,180,270,90,180,270,270,270,270,90,0,90,90,0,270,180,180,270,90,90,180,0,270,270,0]
+            },
+            {
+                "line": 8,
+                "col": 7,
+                "square": [
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "power",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": "5",
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 180
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }]
+                ],
+                "trueRot":[270,270,90,0,90,90,0,0,90,180,0,270,180,0,0,180,0,270,180,0,90,90,720,90,180,0,180,0,0,90,180,180,90,90,0,90,180,90,0,270,270,90,0,0,180,0,90,0,0,90,180,180,0,90,90,90]
+            },
+            {
+                "line": 8,
+                "col": 7,
+                "square": [
+                    [{
+                        "kind": "wine",
+                        "type": "5",
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": "5",
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": "5",
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "power",
+                        "type": 3,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 180
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }]
+                ],
+                "trueRot":[180,0,180,90,180,0,270,180,270,270,0,0,270,90,180,270,180,0,0,90,270,180,180,180,0,0,270,90,270,90,180,0,180,0,270,270,270,0,270,0,0,180,90,90,0,90,0,90,270,180,180,90,180,0,90,90]
+            },
+            {
+                "line": 8,
+                "col": 7,
+                "square": [
+                    [{
+                        "kind": "wine",
+                        "type": "5",
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": "5",
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": "5",
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "power",
+                        "type": 3,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 0
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 3,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }],
+                    [{
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 180
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 0
+                    }, {
+                        "kind": "wine",
+                        "type": 4,
+
+                        "init_rot": 270
+                    }, {
+                        "kind": "wine",
+                        "type": 2,
+
+                        "init_rot": 90
+                    }, {
+                        "kind": "unlight",
+                        "type": 1,
+
+                        "init_rot": 180
+                    }]
+                ],
+                "trueRot":[90,270,180,90,0,270,270,0,270,270,90,270,90,90,270,180,180,0,90,180,180,270,270,270,0,180,90,90,180,270,180,0,0,90,270,270,90,270,270,90,90,90,90,90,270,90,180,180,0,180,180,90,90,180,180,0]
+            },
+            {
+                "line": 2,
+                "col": 2,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 270},
+                        {"type": 1,"kind": "unlight","init_rot": 270}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180,"rot": 180},
+                        {"type": 4,"kind": "power","init_rot": 0,"rot": 0}
+                    ]
+                ],
+                "trueRot":[270,270,180,90]
+            },
+            {
+                "line": 2,
+                "col": 2,
+                "square": [
+                    [
+                        {"type": 1,"kind": "unlight","init_rot": 270},
+                        {"type": 1,"kind": "unlight","init_rot": 270}
+                    ],
+                    [
+                        {"type": 4,"kind": "wine","init_rot": 180,"rot": 180},
+                        {"type": 4,"kind": "power","init_rot": 0,"rot": 0}
+                    ]
+                ],
+                "trueRot":[270,270,180,90]
+            }
+        ]
+}

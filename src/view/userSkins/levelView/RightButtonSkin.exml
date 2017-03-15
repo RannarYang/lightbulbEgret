@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="userSkins.RightButtonSkin" states="up,down,disabled" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" width="65" height.up="65" height.down="65" height="65">
+    <e:Image width="100%" height="100%" scale9Grid="1,3,8,8" alpha.disabled="0.5"
+            
+             source="right_btn_png" anchorOffsetX="0" x="0" y="0" source.down="right_btn_png" source.disabled="right_btn_disable_png"/>
+</e:Skin>

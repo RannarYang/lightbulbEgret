@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="userSkins.SuccessViewSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect fillAlpha="0.6" width="640" height="960" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image width="650" height="500" source="end_success_png" horizontalCenter="0" verticalCenter="0" locked="true"/>
+	<e:Image id="starImage" width="130" height="36" verticalCenter="-86" source="star0_s_png" horizontalCenter="0"/>
+	<e:Group id="buttonGroup" width="290" height="287.88" y="428.49" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+		<e:Button id="nextlevel_btn" label="Button" x="2" y="-127" skinName="userSkins.NextLevelButtonSkin"/>
+		<e:Button id="moregame_btn" label="Button" x="3" y="-101" skinName="userSkins.MoreGameButtonSkin"/>
+		<e:Button label="Button" x="13" y="-91" skinName="userSkins.ShareButtonSkin"/>
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

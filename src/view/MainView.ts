@@ -1,0 +1,160 @@
+class MainView extends eui.Component{
+	private elementWidth: number;
+	private gameViewGroup: eui.Group;
+	private gameButtonGroup: eui.Group;
+	private selLevelButton: eui.Button;
+	private replayButton: eui.Button;
+	private propButton: eui.Button;
+	
+	private guideElement: eui.Component;
+	private levelNumGroup: eui.Group;
+	private level_num1_Image: eui.Image;
+	private level_num2_Image: eui.Image;
+
+	private _gameViewContainer: egret.Sprite;
+	private _gevm: GridElementViewManage;
+
+	private _mainViewDispatcher: egret.EventDispatcher;
+
+	private _startTime: Date;
+	public constructor() {
+		super();
+		this.skinName = userSkins.MainViewSkin;
+		this.currentState = 'guide';
+		this.initGuide();
+	}
+	public partAdded(partName: string,instance: any): void { 
+		if(instance == this.gameViewGroup){
+			this.init();
+		} else if (instance === this.selLevelButton) {
+			this.selLevelButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_selLevelButton, this);
+		} else if (instance === this.replayButton) {
+			this.replayButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_replayButton, this);
+		} else if (instance === this.propButton) {
+			this.propButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_propButton, this);
+		} else if (instance === this.levelNumGroup) {
+			this.setLevelNumImage();
+		} else if (instance === this.gameButtonGroup) {
+			this.gameButtonGroup.touchEnabled = false;
+			this.gameButtonGroup.y =  GameData.brickwidth * GameData.line + 170;
+		}
+	}
+	public get mainViewDispatcher() {
+		return this._mainViewDispatcher;
+	}
+	public usePartLineProp() {
+		this._gevm.usePartLineProp();
+		this.reLink();
+	}
+	public useShowLineProp() {
+		this._gevm.useShowLineProp();
+	}
+	public resetGridElementView() {
+		this._startTime = new Date();
+		this._gevm.reset();
+		this.reLink();
+	}
+	public newGridElementView() {
+		this._startTime = new Date();
+		this.setLevelNumImage();
+		this.gameViewGroup.removeChild(this._gameViewContainer);
+		this.initGameViewGroup();
+		this.gameButtonGroup.y =  GameData.brickwidth * GameData.line + 170;
+		this.reLink();
+	}
+	private initGuide() {
+		let guideElement = this.guideElement = new eui.Component();
+		let shape = new egret.Shape();
+		shape.graphics.lineStyle(12, GameData.roadLinkColor);
+		shape.graphics.drawRect(0, 0, GameData.brickwidth, GameData.brickwidth);
+		shape.graphics.endFill();
+		shape.x = 63;
+		shape.y = 215;
+		guideElement.addChild(shape);
+		var handAniJson = RES.getRes("hand_ani_json");
+        var handAniImg = RES.getRes("hand_ani_png");
+        var mcFactory = new egret.MovieClipDataFactory(handAniJson,handAniImg);
+        var handAniMC = new egret.MovieClip(mcFactory.generateMovieClipData('hand_ani'));
+		handAniMC.x = 80;
+		handAniMC.y = 250;
+		handAniMC.scaleX = 1.6;
+		handAniMC.scaleY = 1.6;
+        guideElement.addChild(handAniMC);
+		handAniMC.play(-1);
+		guideElement.touchEnabled = false;
+		this.addChild(guideElement);
+	}
+	private init() {
+		this._mainViewDispatcher = new egret.EventDispatcher();	
+		this.initGameViewGroup();
+	}
+	private initGameViewGroup() {
+		let line = GameData.line;
+		let col = GameData.col;
+		
+		let gameViewContainer = this._gameViewContainer = new egret.Sprite();
+		this._gevm = new GridElementViewManage(gameViewContainer);
+		gameViewContainer.x = (GameData.stageW - GameData.brickwidth * col) / 2; // 游戏区域居中
+		this.gameViewGroup.addChild(gameViewContainer);
+		this._gevm.addEventListener(GridElementViewManageEvent.TAP__GRIDELEMENT, this.tap_gridelement, this);
+	}
+	private tap_selLevelButton() {
+		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_SEL_LEVEL_BUTTON);
+		this._mainViewDispatcher.dispatchEvent(mvt);
+	}
+	private tap_replayButton() {
+		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_REPLAY_BUTTON);
+		this._mainViewDispatcher.dispatchEvent(mvt);
+	}
+	private tap_propButton() {
+		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_PROP_BUTTON);
+		this._mainViewDispatcher.dispatchEvent(mvt);
+	}
+	private tap_gridelement(evt) {
+		let xIndex = evt.xIndex;
+		let yIndex = evt.yIndex;
+		let now_rot = GameData.elements[xIndex][yIndex].rot + 90;
+		now_rot = (now_rot % 360) === 0 ? 0 : now_rot;
+		GameData.elements[xIndex][yIndex].rot = now_rot;
+		// unlind bulb 
+		this.reLink();
+
+		if (LinkLogic.isGameOver()){
+			if(this.currentState === 'guide') {
+				let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.SKIP_GUIDE);
+				this._mainViewDispatcher.dispatchEvent(mvt)
+				this.currentState = 'game';
+				this.removeChild(this.guideElement);
+			} else {
+				let endTime = new Date();
+				let passTime = (endTime.getTime() - this._startTime.getTime())/1000%60;
+				var levelGrade = GameData.starConfig["l" + GameData.line + "c" + GameData.col];
+				for (var gradei = 0, levelGrade_len = levelGrade.length; gradei < levelGrade_len; gradei++) {
+					var getGrade = 2;
+					if (passTime <= levelGrade[gradei]) {
+						getGrade = gradei;
+						break;
+					}
+				}
+				let isUsePartLineProp = GameData.propPartLine.indexOf(GameData.nowLevel) !== -1;
+				let isUseShowLineProp = GameData.propShowLine.indexOf(GameData.nowLevel) !== -1;
+				var star_num = ( isUsePartLineProp || isUseShowLineProp ) ? 3:3 - getGrade;
+				let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.SUCCESS);
+				mvt.starNum = star_num;
+				this._mainViewDispatcher.dispatchEvent(mvt)
+			}
+			
+		}
+	}
+	private setLevelNumImage() {
+		let leveltext = (GameData.nowLevel < 10) ? '0' + GameData.nowLevel : '' + GameData.nowLevel;
+		this.level_num1_Image.texture = RES.getRes(leveltext[0] + '_png');
+		this.level_num2_Image.texture = RES.getRes(leveltext[1] + '_png');
+	}
+	private reLink() {
+		this._gevm.unlightBulb();
+		LinkLogic.link();
+		this._gevm.lightBulb();
+	}
+
+}

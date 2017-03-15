@@ -1,0 +1,7 @@
+.wing
+bin-debug
+libs
+polyfill
+template
+debug
+debug.log

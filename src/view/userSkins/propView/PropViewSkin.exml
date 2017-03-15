@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="userSkins.PropViewSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect fillAlpha="0.6" width="640" height="960" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image width="650" height="500" horizontalCenter="0" verticalCenter="0" source="end_tool_png"/>
+	<e:Group id="buttonGroup" width="290" height="287.88" y="396.71" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+		<e:Group width="290" height="140" x="-139" y="-26">
+			<e:Button id="partLineButton" label="Button" x="5" y="38.12" skinName="userSkins.PartLineButtonSkin"/>
+			<e:Label text="1.2元" y="9.52" fontFamily="微软雅黑" textColor="0x000000" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:Group width="290" height="200" x="-129" y="-16">
+			<e:Button id="showLineButton" label="Button" x="5" y="38.12" skinName="userSkins.ShowLineButtonSkin"/>
+			<e:Label text="2.4元" y="9.52" fontFamily="微软雅黑" textColor="0x000000" horizontalCenter="0.5"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="closeButton" label="Button" y="799.55" skinName="userSkins.CloseButtonSkin" horizontalCenter="0"/>
+</e:Skin>

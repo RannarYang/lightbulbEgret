@@ -1,0 +1,14 @@
+{
+    "frameColor" : "0x4B68FB",
+    "squareFillColor" : "0xF9F9F7",
+    "squareUnableFillColor" :"0xbac7da", 
+    "squareStroColor" : "0x9EACF8",
+    "roadLinkColor" : "0xFA8904",
+    "roadUnlinkColor" : "0x6F748D",
+    "tipColor" : "0x05f9ab",
+    "unlockFillColor" : "0xccc",
+
+    "roadPercent": 0.2,
+    "leftPercent": 0.4,
+    "leftRoadPercent": 0.6
+}

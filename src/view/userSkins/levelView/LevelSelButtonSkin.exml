@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="userSkins.LevelSelButtonSkin" states="up,down,disabled" minHeight="50" minWidth="100" currentState="up" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="130" height="150">
+    <e:Image horizontalCenter="0" verticalCenter="0" source.disabled="lock_png" source.down="unlock_png" source.up="unlock_png" source="unlock_png"/>
+	<e:Image id="starImage" horizontalCenter="0" verticalCenter="53" x="10" y="10" source="star0_s_png" anchorOffsetX="0" width="116" anchorOffsetY="0" height="32.12" includeIn="up,down"/>
+	<e:Group id="numGroup" width="200" height="200" x="0" y="0" includeIn="up,down">
+        <e:Image id="num0" width="44" height="64" x="35" y="26" source="num0_png"/>
+	    <e:Image id="num1" width="44" height="64" x="64" y="26" source="num1_png"/>
+    </e:Group>
+</e:Skin>

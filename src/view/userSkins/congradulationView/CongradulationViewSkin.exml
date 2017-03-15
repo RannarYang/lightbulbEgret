@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="userSkins.CongradulationViewSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect fillAlpha="0.6" width="640" height="960" horizontalCenter="0" verticalCenter="0" locked="true"/>
+	<e:Image width="650" height="500" horizontalCenter="0" verticalCenter="0" source="end_endless_png"/>
+	<e:Image width="309" height="62" y="443.09" source="endless_text_png" horizontalCenter="0.5"/>
+	<e:Button id="sure_btn" label="Button" y="553.58" horizontalCenter="0" skinName="userSkins.SureButtonSkin"/>
+</e:Skin>

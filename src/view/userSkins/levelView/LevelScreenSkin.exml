@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="userSkins.LevelScreenSkin" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" width="640" height="960">
+	<w:Declarations>
+		<tween:TweenGroup id="slideLeft">
+			<tween:TweenItem target="{levelBtnGroup1}">
+				<tween:Set/>
+				<tween:To duration="900" ease="cubicOut">
+					<tween:props>
+						<e:Object x="{-600}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{levelBtnGroup2}">
+				<tween:Set/>
+				<tween:To duration="900" ease="cubicOut">
+					<tween:props>
+						<e:Object x="{40}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="slideRight">
+			<tween:TweenItem target="{levelBtnGroup1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object x="{-600}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1000" ease="cubicOut">
+					<tween:props>
+						<e:Object x="{40}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{levelBtnGroup2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object x="{40}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1000" ease="cubicOut">
+					<tween:props>
+						<e:Object x="{680}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+    <e:Image width="640" height="960" scale9Grid="1,3,8,8"                           source="level_bg_jpg" horizontalCenter="0" locked="true"/>
+	<e:Group id="levelBtnGroup1" width="560" height="483.64" y="73" anchorOffsetX="0" anchorOffsetY="0" x="40">
+		<e:layout>
+			<e:TileLayout horizontalGap="4" verticalGap="3" requestedRowCount="3" requestedColumnCount="4" columnWidth="140" rowHeight="170"/>
+		</e:layout>
+	</e:Group>
+	<e:Group id="levelBtnGroup2" width="560" height="483.64" y="73" anchorOffsetX="0" anchorOffsetY="0" x="680">
+		<e:layout>
+		<e:TileLayout horizontalGap="4" verticalGap="3" requestedRowCount="3" requestedColumnCount="4" columnWidth="140" rowHeight="170"/>
+		</e:layout>
+	</e:Group>
+	<e:Group width="200" height="65" y="596.3" anchorOffsetY="0" horizontalCenter="0" locked="true">
+		<e:Button id="prevButton" label="Button" x="0" y="0" skinName="userSkins.LeftButtonSkin"/>
+		<e:Button id="nextButton" label="Button" x="135" y="0" skinName="userSkins.RightButtonSkin"/>
+	</e:Group>
+	<e:Button id="endlessButton" label="Button" y="662.06" skinName="userSkins.EndlessButtonSkin" horizontalCenter="0" enabled="false"/>
+	<e:Label text="闯过第24关才能开启无尽模式哦~" y="754.66" fontFamily="Microsoft YaHei" size="26" textColor="0x00e9da" horizontalCenter="0"/>
+</e:Skin>
