@@ -96,7 +96,8 @@ class MainView extends eui.Component{
 		this._gevm = new GridElementViewManage(gameViewContainer);
 		gameViewContainer.x = (GameData.stageW - GameData.brickwidth * col) / 2; // 游戏区域居中
 		this.gameViewGroup.addChild(gameViewContainer);
-		this._gevm.addEventListener(GridElementViewManageEvent.TAP__GRIDELEMENT, this.tap_gridelement, this);
+		this._gevm.addEventListener(GridElementViewManageEvent.TAP_GRIDELEMENT, this.tap_gridelement, this);
+		this._gevm.addEventListener(GridElementViewManageEvent.ROTATE_END, this.rotate_end, this);
 	}
 	private tap_selLevelButton() {
 		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_SEL_LEVEL_BUTTON);
@@ -122,9 +123,9 @@ class MainView extends eui.Component{
 		now_rot = (now_rot % 360) === 0 ? 0 : now_rot;
 		GameData.elements[xIndex][yIndex].rot = now_rot;
 		// unlind bulb 
+	}
+	private rotate_end() {
 		this.reLink();
-
-		
 	}
 	private setLevelNumImage() {
 		let leveltext = (GameData.nowLevel < 10) ? '0' + GameData.nowLevel : '' + GameData.nowLevel;

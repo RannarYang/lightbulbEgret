@@ -26,6 +26,7 @@ class GridElementView extends egret.Sprite{
 		roadShape.x = roadShape.y = roadShape.anchorOffsetX = roadShape.anchorOffsetY = GameData.brickwidth * 0.5;
 		this.addChild(roadShape);
 		this.changeRoadShape(false);
+		roadShape.rotation = element.rot;
 
 		let tipsLineShape = this._tipsLineShape = new egret.Shape();
 		tipsLineShape.x = tipsLineShape.y = tipsLineShape.anchorOffsetX = tipsLineShape.anchorOffsetY = GameData.brickwidth * 0.5;
@@ -74,13 +75,17 @@ class GridElementView extends egret.Sprite{
         }
 		tipsLineShape.rotation = this.element.des_rot;
 	}
-	public rotate() {
+	public rotate(callback = () => {}) {
 		this.touchEnabled = false;
 		let rotation = this.element.rot;
+		if (rotation === 270) {
+			rotation = -90;
+			this._roadShape.rotation = -180;
+		}
 		var tw:egret.Tween = egret.Tween.get(this._roadShape);
-		tw.to({rotation: rotation}, 200).call(()=>{
-			this._roadShape.rotation = rotation;
-			(this._roadShape.rotation % 360) == 0 && (this._roadShape.rotation = 0);
+		tw.to({rotation: rotation}, 150).call(()=>{
+			egret.Tween.removeTweens(this._roadShape);
+			callback();
 			this.touchEnabled = true;
 		});
 		
@@ -122,7 +127,7 @@ class GridElementView extends egret.Sprite{
                 roadShape.graphics.endFill();
                 break;
         }
-		roadShape.rotation = element.rot;
+		
 	}
 	private changeSquareShape(canClick:boolean) {
 		let squareShape = this._squareShape;

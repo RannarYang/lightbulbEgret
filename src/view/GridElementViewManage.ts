@@ -92,13 +92,15 @@ class GridElementViewManage extends egret.EventDispatcher{
 	private touch_tap(evt) {
 		let elementView = evt.currentTarget;
 
-		let evmt:GridElementViewManageEvent = new GridElementViewManageEvent(GridElementViewManageEvent.TAP__GRIDELEMENT);
+		let evmt:GridElementViewManageEvent = new GridElementViewManageEvent(GridElementViewManageEvent.TAP_GRIDELEMENT);
 		evmt.xIndex = elementView.element.xIndex;
 		evmt.yIndex = elementView.element.yIndex;
 
 		this.dispatchEvent(evmt);
-
-		elementView.rotate();
+		elementView.rotate(()=>{
+			let rotateEndEvent:GridElementViewManageEvent = new GridElementViewManageEvent(GridElementViewManageEvent.ROTATE_END);
+			this.dispatchEvent(rotateEndEvent);
+		});
 	}
 	
 }

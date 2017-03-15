@@ -133,16 +133,16 @@ class GameData {
 		localStorage.setItem('starlevelGrade', JSON.stringify(GameData._starlevelGrade));
 	}
 	public static initUserData() {
-		GameData._propPartLine = JSON.parse(localStorage.getItem('propPartLine'));
+		GameData._propPartLine = JSON.parse(localStorage.getItem('propPartLine')) || [];
 		GameData._propPartLine = GameData._propPartLine.filter((val)=>{
 			return val <= 24;
 		})
-		GameData._propShowLine = JSON.parse(localStorage.getItem('propShowLine'));
+		GameData._propShowLine = JSON.parse(localStorage.getItem('propShowLine')) || [];
 		GameData._propShowLine = GameData._propShowLine.filter((val) => {
 			return val <= 24;
 		})
-		GameData._levelNum = JSON.parse(localStorage.getItem('levelNum'));
-		GameData._levelEndless = JSON.parse(localStorage.getItem('levelEndless'));
-		GameData._starlevelGrade = JSON.parse(localStorage.getItem('starlevelGrade'));
+		GameData._levelNum = JSON.parse(localStorage.getItem('levelNum')) || 1;
+		GameData._levelEndless = JSON.parse(localStorage.getItem('levelEndless')) || false;
+		GameData._starlevelGrade = JSON.parse(localStorage.getItem('starlevelGrade')) || [];
 	}
 }

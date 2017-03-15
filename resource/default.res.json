@@ -1,329 +1,324 @@
 {
-	"groups":[
+	"groups": [
 		{
-			"keys":"loading_bg_jpg",
-			"name":"preload"
+			"keys": "loading_bg_jpg",
+			"name": "preload"
 		},
 		{
-			"keys":"8_png,9_png,bg_jpg,close_png,end_endless_png,end_success_png,end_tool_png,endless_png,endless_lock_png,endless_text_png,hand_ani_json,hand_ani_png,left_btn_png,left_btn_disable_png,level_bg_jpg,level_text_png,light_png,lock_png,moregame_btn_png,nextlevel_btn_png,num0_png,num1_png,num2_png,num3_png,num4_png,num5_png,num6_png,num7_png,num8_png,num9_png,part_line_btn_png,power_png,replay_btn_png,right_btn_png,right_btn_disable_png,selectlevel_btn_png,share_btn_png,showline_btn_png,soundOff_png,soundOn_png,star0_s_png,star1_s_png,star2_s_png,star3_s_png,sure_btn_png,title_png,tool_icon_png,unlight_png,unlock_png,0_png,1_png,2_png,3_png,4_png,5_png,6_png,7_png,levelConfig_json,rankingStandardConfig_json,viewConfig_json,gameConfig_json,win_mp3",
-			"name":"game"
+			"keys": "8_png,9_png,bg_jpg,close_png,end_endless_png,end_success_png,end_tool_png,endless_png,endless_lock_png,endless_text_png,hand_ani_json,hand_ani_png,left_btn_png,left_btn_disable_png,level_bg_jpg,level_text_png,light_png,lock_png,moregame_btn_png,nextlevel_btn_png,num0_png,num1_png,num2_png,num3_png,num4_png,num5_png,num6_png,num7_png,num8_png,num9_png,part_line_btn_png,power_png,replay_btn_png,right_btn_png,right_btn_disable_png,selectlevel_btn_png,share_btn_png,showline_btn_png,soundOff_png,soundOn_png,star0_s_png,star1_s_png,star2_s_png,star3_s_png,sure_btn_png,title_png,tool_icon_png,unlight_png,unlock_png,0_png,1_png,2_png,3_png,4_png,5_png,6_png,7_png,levelConfig_json,rankingStandardConfig_json,viewConfig_json,win_mp3",
+			"name": "game"
 		}
 	],
-	"resources":[
+	"resources": [
 		{
-			"name":"8_png",
-			"type":"image",
-			"url":"res/8.png"
+			"name": "8_png",
+			"type": "image",
+			"url": "res/8.png"
 		},
 		{
-			"name":"9_png",
-			"type":"image",
-			"url":"res/9.png"
+			"name": "9_png",
+			"type": "image",
+			"url": "res/9.png"
 		},
 		{
-			"name":"bg_jpg",
-			"type":"image",
-			"url":"res/bg.jpg"
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "res/bg.jpg"
 		},
 		{
-			"name":"close_png",
-			"type":"image",
-			"url":"res/close.png"
+			"name": "close_png",
+			"type": "image",
+			"url": "res/close.png"
 		},
 		{
-			"name":"end_endless_png",
-			"type":"image",
-			"url":"res/end_endless.png"
+			"name": "end_endless_png",
+			"type": "image",
+			"url": "res/end_endless.png"
 		},
 		{
-			"name":"end_success_png",
-			"type":"image",
-			"url":"res/end_success.png"
+			"name": "end_success_png",
+			"type": "image",
+			"url": "res/end_success.png"
 		},
 		{
-			"name":"end_tool_png",
-			"type":"image",
-			"url":"res/end_tool.png"
+			"name": "end_tool_png",
+			"type": "image",
+			"url": "res/end_tool.png"
 		},
 		{
-			"name":"endless_png",
-			"type":"image",
-			"url":"res/endless.png"
+			"name": "endless_png",
+			"type": "image",
+			"url": "res/endless.png"
 		},
 		{
-			"name":"endless_lock_png",
-			"type":"image",
-			"url":"res/endless_lock.png"
+			"name": "endless_lock_png",
+			"type": "image",
+			"url": "res/endless_lock.png"
 		},
 		{
-			"name":"endless_text_png",
-			"type":"image",
-			"url":"res/endless_text.png"
+			"name": "endless_text_png",
+			"type": "image",
+			"url": "res/endless_text.png"
 		},
 		{
-			"name":"hand_ani_json",
-			"type":"json",
-			"url":"res/hand_ani.json"
+			"name": "hand_ani_json",
+			"type": "json",
+			"url": "res/hand_ani.json"
 		},
 		{
-			"name":"hand_ani_png",
-			"type":"image",
-			"url":"res/hand_ani.png"
+			"name": "hand_ani_png",
+			"type": "image",
+			"url": "res/hand_ani.png"
 		},
 		{
-			"name":"left_btn_png",
-			"type":"image",
-			"url":"res/left_btn.png"
+			"name": "left_btn_png",
+			"type": "image",
+			"url": "res/left_btn.png"
 		},
 		{
-			"name":"left_btn_disable_png",
-			"type":"image",
-			"url":"res/left_btn_disable.png"
+			"name": "left_btn_disable_png",
+			"type": "image",
+			"url": "res/left_btn_disable.png"
 		},
 		{
-			"name":"level_bg_jpg",
-			"type":"image",
-			"url":"res/level_bg.jpg"
+			"name": "level_bg_jpg",
+			"type": "image",
+			"url": "res/level_bg.jpg"
 		},
 		{
-			"name":"level_text_png",
-			"type":"image",
-			"url":"res/level_text.png"
+			"name": "level_text_png",
+			"type": "image",
+			"url": "res/level_text.png"
 		},
 		{
-			"name":"light_png",
-			"type":"image",
-			"url":"res/light.png"
+			"name": "light_png",
+			"type": "image",
+			"url": "res/light.png"
 		},
 		{
-			"name":"lock_png",
-			"type":"image",
-			"url":"res/lock.png"
+			"name": "lock_png",
+			"type": "image",
+			"url": "res/lock.png"
 		},
 		{
-			"name":"moregame_btn_png",
-			"type":"image",
-			"url":"res/moregame_btn.png"
+			"name": "moregame_btn_png",
+			"type": "image",
+			"url": "res/moregame_btn.png"
 		},
 		{
-			"name":"nextlevel_btn_png",
-			"type":"image",
-			"url":"res/nextlevel_btn.png"
+			"name": "nextlevel_btn_png",
+			"type": "image",
+			"url": "res/nextlevel_btn.png"
 		},
 		{
-			"name":"num0_png",
-			"type":"image",
-			"url":"res/num0.png"
+			"name": "num0_png",
+			"type": "image",
+			"url": "res/num0.png"
 		},
 		{
-			"name":"num1_png",
-			"type":"image",
-			"url":"res/num1.png"
+			"name": "num1_png",
+			"type": "image",
+			"url": "res/num1.png"
 		},
 		{
-			"name":"num2_png",
-			"type":"image",
-			"url":"res/num2.png"
+			"name": "num2_png",
+			"type": "image",
+			"url": "res/num2.png"
 		},
 		{
-			"name":"num3_png",
-			"type":"image",
-			"url":"res/num3.png"
+			"name": "num3_png",
+			"type": "image",
+			"url": "res/num3.png"
 		},
 		{
-			"name":"num4_png",
-			"type":"image",
-			"url":"res/num4.png"
+			"name": "num4_png",
+			"type": "image",
+			"url": "res/num4.png"
 		},
 		{
-			"name":"num5_png",
-			"type":"image",
-			"url":"res/num5.png"
+			"name": "num5_png",
+			"type": "image",
+			"url": "res/num5.png"
 		},
 		{
-			"name":"num6_png",
-			"type":"image",
-			"url":"res/num6.png"
+			"name": "num6_png",
+			"type": "image",
+			"url": "res/num6.png"
 		},
 		{
-			"name":"num7_png",
-			"type":"image",
-			"url":"res/num7.png"
+			"name": "num7_png",
+			"type": "image",
+			"url": "res/num7.png"
 		},
 		{
-			"name":"num8_png",
-			"type":"image",
-			"url":"res/num8.png"
+			"name": "num8_png",
+			"type": "image",
+			"url": "res/num8.png"
 		},
 		{
-			"name":"num9_png",
-			"type":"image",
-			"url":"res/num9.png"
+			"name": "num9_png",
+			"type": "image",
+			"url": "res/num9.png"
 		},
 		{
-			"name":"part_line_btn_png",
-			"type":"image",
-			"url":"res/part_line_btn.png"
+			"name": "part_line_btn_png",
+			"type": "image",
+			"url": "res/part_line_btn.png"
 		},
 		{
-			"name":"power_png",
-			"type":"image",
-			"url":"res/power.png"
+			"name": "power_png",
+			"type": "image",
+			"url": "res/power.png"
 		},
 		{
-			"name":"replay_btn_png",
-			"type":"image",
-			"url":"res/replay_btn.png"
+			"name": "replay_btn_png",
+			"type": "image",
+			"url": "res/replay_btn.png"
 		},
 		{
-			"name":"right_btn_png",
-			"type":"image",
-			"url":"res/right_btn.png"
+			"name": "right_btn_png",
+			"type": "image",
+			"url": "res/right_btn.png"
 		},
 		{
-			"name":"right_btn_disable_png",
-			"type":"image",
-			"url":"res/right_btn_disable.png"
+			"name": "right_btn_disable_png",
+			"type": "image",
+			"url": "res/right_btn_disable.png"
 		},
 		{
-			"name":"selectlevel_btn_png",
-			"type":"image",
-			"url":"res/selectlevel_btn.png"
+			"name": "selectlevel_btn_png",
+			"type": "image",
+			"url": "res/selectlevel_btn.png"
 		},
 		{
-			"name":"share_btn_png",
-			"type":"image",
-			"url":"res/share_btn.png"
+			"name": "share_btn_png",
+			"type": "image",
+			"url": "res/share_btn.png"
 		},
 		{
-			"name":"showline_btn_png",
-			"type":"image",
-			"url":"res/showline_btn.png"
+			"name": "showline_btn_png",
+			"type": "image",
+			"url": "res/showline_btn.png"
 		},
 		{
-			"name":"soundOff_png",
-			"type":"image",
-			"url":"res/soundOff.png"
+			"name": "soundOff_png",
+			"type": "image",
+			"url": "res/soundOff.png"
 		},
 		{
-			"name":"soundOn_png",
-			"type":"image",
-			"url":"res/soundOn.png"
+			"name": "soundOn_png",
+			"type": "image",
+			"url": "res/soundOn.png"
 		},
 		{
-			"name":"star0_s_png",
-			"type":"image",
-			"url":"res/star0_s.png"
+			"name": "star0_s_png",
+			"type": "image",
+			"url": "res/star0_s.png"
 		},
 		{
-			"name":"star1_s_png",
-			"type":"image",
-			"url":"res/star1_s.png"
+			"name": "star1_s_png",
+			"type": "image",
+			"url": "res/star1_s.png"
 		},
 		{
-			"name":"star2_s_png",
-			"type":"image",
-			"url":"res/star2_s.png"
+			"name": "star2_s_png",
+			"type": "image",
+			"url": "res/star2_s.png"
 		},
 		{
-			"name":"star3_s_png",
-			"type":"image",
-			"url":"res/star3_s.png"
+			"name": "star3_s_png",
+			"type": "image",
+			"url": "res/star3_s.png"
 		},
 		{
-			"name":"sure_btn_png",
-			"type":"image",
-			"url":"res/sure_btn.png"
+			"name": "sure_btn_png",
+			"type": "image",
+			"url": "res/sure_btn.png"
 		},
 		{
-			"name":"title_png",
-			"type":"image",
-			"url":"res/title.png"
+			"name": "title_png",
+			"type": "image",
+			"url": "res/title.png"
 		},
 		{
-			"name":"tool_icon_png",
-			"type":"image",
-			"url":"res/tool_icon.png"
+			"name": "tool_icon_png",
+			"type": "image",
+			"url": "res/tool_icon.png"
 		},
 		{
-			"name":"unlight_png",
-			"type":"image",
-			"url":"res/unlight.png"
+			"name": "unlight_png",
+			"type": "image",
+			"url": "res/unlight.png"
 		},
 		{
-			"name":"unlock_png",
-			"type":"image",
-			"url":"res/unlock.png"
+			"name": "unlock_png",
+			"type": "image",
+			"url": "res/unlock.png"
 		},
 		{
-			"name":"0_png",
-			"type":"image",
-			"url":"res/0.png"
+			"name": "0_png",
+			"type": "image",
+			"url": "res/0.png"
 		},
 		{
-			"name":"1_png",
-			"type":"image",
-			"url":"res/1.png"
+			"name": "1_png",
+			"type": "image",
+			"url": "res/1.png"
 		},
 		{
-			"name":"2_png",
-			"type":"image",
-			"url":"res/2.png"
+			"name": "2_png",
+			"type": "image",
+			"url": "res/2.png"
 		},
 		{
-			"name":"3_png",
-			"type":"image",
-			"url":"res/3.png"
+			"name": "3_png",
+			"type": "image",
+			"url": "res/3.png"
 		},
 		{
-			"name":"4_png",
-			"type":"image",
-			"url":"res/4.png"
+			"name": "4_png",
+			"type": "image",
+			"url": "res/4.png"
 		},
 		{
-			"name":"5_png",
-			"type":"image",
-			"url":"res/5.png"
+			"name": "5_png",
+			"type": "image",
+			"url": "res/5.png"
 		},
 		{
-			"name":"6_png",
-			"type":"image",
-			"url":"res/6.png"
+			"name": "6_png",
+			"type": "image",
+			"url": "res/6.png"
 		},
 		{
-			"name":"7_png",
-			"type":"image",
-			"url":"res/7.png"
+			"name": "7_png",
+			"type": "image",
+			"url": "res/7.png"
 		},
 		{
-			"name":"levelConfig_json",
-			"type":"json",
-			"url":"jsonConfig/levelConfig.json"
+			"name": "levelConfig_json",
+			"type": "json",
+			"url": "jsonConfig/levelConfig.json"
 		},
 		{
-			"name":"rankingStandardConfig_json",
-			"type":"json",
-			"url":"jsonConfig/rankingStandardConfig.json"
+			"name": "rankingStandardConfig_json",
+			"type": "json",
+			"url": "jsonConfig/rankingStandardConfig.json"
 		},
 		{
-			"name":"viewConfig_json",
-			"type":"json",
-			"url":"jsonConfig/viewConfig.json"
+			"name": "viewConfig_json",
+			"type": "json",
+			"url": "jsonConfig/viewConfig.json"
 		},
 		{
-			"name":"gameConfig_json",
-			"type":"json",
-			"url":"jsonConfig/gameConfig.json"
+			"name": "loading_bg_jpg",
+			"type": "image",
+			"url": "loading/loading_bg.jpg"
 		},
 		{
-			"name":"loading_bg_jpg",
-			"type":"image",
-			"url":"loading/loading_bg.jpg"
-		},
-		{
-			"name":"win_mp3",
-			"type":"sound",
-			"url":"sound/win.mp3"
+			"name": "win_mp3",
+			"type": "sound",
+			"url": "sound/win.mp3"
 		}
 	]
 }
