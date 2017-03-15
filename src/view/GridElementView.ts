@@ -3,7 +3,6 @@ class GridElementView extends egret.Sprite{
 	private yIndex: number;
 	private _squareShape: egret.Shape;
 	private _roadShape: egret.Shape;
-	private _canRotate: boolean = true;
 	private _elementImg: egret.Bitmap;
 
 	private _tipsLineShape: egret.Shape;
@@ -63,16 +62,16 @@ class GridElementView extends egret.Sprite{
 		
 	}
 	public rotate() {
-		if(this._canRotate) {
-			this._canRotate = false;
-			let rotation = this.element.rot;
-			var tw:egret.Tween = egret.Tween.get(this._roadShape);
-			tw.to({rotation: rotation}, 100).call(()=>{
-				this._roadShape.rotation = rotation;
-				(this._roadShape.rotation % 360) == 0 && (this._roadShape.rotation = 0);
-				this._canRotate = true;
-			});
-		}
+		this.touchEnabled = false;
+		let rotation = this.element.rot;
+		var tw:egret.Tween = egret.Tween.get(this._roadShape);
+		tw.to({rotation: rotation}, 200).call(()=>{
+			this._roadShape.rotation = rotation;
+			(this._roadShape.rotation % 360) == 0 && (this._roadShape.rotation = 0);
+			this.touchEnabled = true;
+		});
+		
+		
 	}
 	public addTipsLine() {
 		let tipsLineShape = this._tipsLineShape;
@@ -86,12 +85,12 @@ class GridElementView extends egret.Sprite{
         }
 		tipsLineShape.rotation = this.element.des_rot;
 	}
-	public rotateToDes() {
+	public rotateToDes(callback = () => {}) {
 		// 背景变灰表示不可点击
 		this.touchEnabled = false;
 		this.changeSquareShape(false);
 		var tw:egret.Tween = egret.Tween.get(this._roadShape);
-		tw.to({rotation: this.element.des_rot}, 100);
+		tw.to({rotation: this.element.des_rot}, 200).call(callback);
 	}
 	public reset() {
 		this.touchEnabled = true;

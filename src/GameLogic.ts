@@ -70,7 +70,11 @@ class GameLogic {
 		this._congradulationView.dispatcher.addEventListener(CongradulationViewEvent.TAP_SURE_BUTTON, this.tap_sureBtn, this);
 	}
 	private skip_guide() {
-		this._levelView.show();
+		egret.setTimeout(()=>{
+			this._levelView.show();
+			this._mainView.currentState = 'game';
+			this._mainView.enabled = true;
+		}, this, 500);
 	}
 	private success(evt:MainViewEvent) {
 		GameData.soundOn && this._sound.play(0,1);
@@ -78,6 +82,7 @@ class GameLogic {
 		GameData.setStarlevelGrade(GameData.nowLevel, starNum);
 		GameData.levelNum = Math.max(GameData.nowLevel + 1, GameData.levelNum);
 		this._successView.show(starNum);
+		
 	}
 	private tap_selLevelButtonInLevelView(evt: LevelViewEvent) {
 		GameData.nowLevel = evt.levelNum;
@@ -103,7 +108,7 @@ class GameLogic {
 		
 		LevelGameDataParse.parseLevelGameData(this._presentLevelConfig);
 		this._mainView.newGridElementView();
-
+		this._mainView.enabled = true;
 		this.useProp();
 	}
 	private useProp() {

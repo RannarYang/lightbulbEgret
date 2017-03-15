@@ -18,7 +18,7 @@ class LinkLogic {
 		LinkLogic.setLink(x, y, 0);
 		
 	}
-	public static isGameOver() {
+	public static isSuccess() {
 		if(GameData.nowLightNum === GameData.lightNum) {
 			return true;
 		} else {

@@ -15,7 +15,20 @@ class GridElementViewManage extends egret.EventDispatcher{
 			let xIndex = sureGrid.line;
 			let yIndex = sureGrid.col;
 			let elementView = this._elementViews[xIndex][yIndex];
-			elementView.rotateToDes();
+			
+		}
+		let sureGridArr = JSON.parse(JSON.stringify(GameData.sureGridArr));
+		this.rotateElementToDes(sureGridArr);
+	}
+	private rotateElementToDes(sureGridArr) {
+		let sureGrid = sureGridArr.pop();
+		if(sureGrid) {
+			let xIndex = sureGrid.line;
+			let yIndex = sureGrid.col;
+			let elementView = this._elementViews[xIndex][yIndex];
+			elementView.rotateToDes(() => {
+				this.rotateElementToDes(sureGridArr);
+			});
 		}
 	}
 	public useShowLineProp() {

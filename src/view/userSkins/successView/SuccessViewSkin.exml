@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="userSkins.SuccessViewSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Rect fillAlpha="0.6" width="640" height="960" horizontalCenter="0" verticalCenter="0"/>
-	<e:Image width="650" height="500" source="end_success_png" horizontalCenter="0" verticalCenter="0" locked="true"/>
-	<e:Image id="starImage" width="130" height="36" verticalCenter="-86" source="star0_s_png" horizontalCenter="0"/>
-	<e:Group id="buttonGroup" width="290" height="287.88" y="428.49" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
-		<e:Button id="nextlevel_btn" label="Button" x="2" y="-127" skinName="userSkins.NextLevelButtonSkin"/>
-		<e:Button id="moregame_btn" label="Button" x="3" y="-101" skinName="userSkins.MoreGameButtonSkin"/>
-		<e:Button label="Button" x="13" y="-91" skinName="userSkins.ShareButtonSkin"/>
-		<e:layout>
-			<e:VerticalLayout/>
-		</e:layout>
+<e:Skin class="userSkins.SuccessViewSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="showIt">
+			<tween:TweenItem target="{rect}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="550">
+					<tween:props>
+						<e:Object alpha="{0.6}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{group}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="550"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1000" ease="quartIn">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="hideIt">
+			<tween:TweenItem target="{rect}">
+				<tween:Set/>
+				<tween:To duration="550">
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{group}">
+				<tween:Set/>
+				<tween:To duration="550">
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup/>
+	</w:Declarations>
+	<e:Rect id="rect" fillAlpha="0.6" width="640" height="960" horizontalCenter="0" verticalCenter="0"/>
+	<e:Group id="group" horizontalCenter="0" verticalCenter="0">
+		<e:Image width="650" height="500" source="end_success_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="starImage" width="130" height="36" verticalCenter="-86" source="star0_s_png" horizontalCenter="0"/>
+		<e:Group id="buttonGroup" width="290" height="287.88" y="194" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+			<e:Button id="nextlevel_btn" label="Button" x="2" y="-127" skinName="userSkins.NextLevelButtonSkin"/>
+			<e:Button id="moregame_btn" label="Button" x="3" y="-101" skinName="userSkins.MoreGameButtonSkin"/>
+			<e:Button label="Button" x="13" y="-91" skinName="userSkins.ShareButtonSkin"/>
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:Group>
 	</e:Group>
 </e:Skin>

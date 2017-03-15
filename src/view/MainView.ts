@@ -126,11 +126,11 @@ class MainView extends eui.Component{
 		// unlind bulb 
 		this.reLink();
 
-		if (LinkLogic.isGameOver()){
+		if (LinkLogic.isSuccess()){
 			if(this.currentState === 'guide') {
+				this.enabled = false;
 				let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.SKIP_GUIDE);
 				this._mainViewDispatcher.dispatchEvent(mvt)
-				this.currentState = 'game';
 				this.removeChild(this.guideElement);
 			} else {
 				let endTime = new Date();
@@ -143,6 +143,10 @@ class MainView extends eui.Component{
 						break;
 					}
 				}
+
+				// 禁止点击
+				this.enabled = false;
+
 				let isUsePartLineProp = GameData.getPropPartLine(GameData.nowLevel);
 				let isUseShowLineProp = GameData.getPropShowLine(GameData.nowLevel);
 				var star_num = ( isUsePartLineProp || isUseShowLineProp ) ? 3:3 - getGrade;

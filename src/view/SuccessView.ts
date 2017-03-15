@@ -3,6 +3,8 @@ class SuccessView extends eui.Component{
 	private nextlevel_btn: eui.Button;
 	private moregame_btn: eui.Button;
 	private share_btn: eui.Button;
+	private showIt: egret.tween.TweenGroup;
+	private hideIt: egret.tween.TweenGroup;
 
 	private _dispatcher: egret.EventDispatcher;
 	public constructor() {
@@ -23,6 +25,7 @@ class SuccessView extends eui.Component{
 	public show(starGrade:number) {
 		this.starImage.texture = RES.getRes('star' + starGrade + '_s_png');
 		this.visible = true;
+		this.showIt.play(1);
 	}
 	public hide() {
 		this.visible = false;
