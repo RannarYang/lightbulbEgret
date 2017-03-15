@@ -7,7 +7,7 @@ class GameLogic {
 	private _successView: SuccessView;
 	private _congradulationView: CongradulationView;
 	private _propView: PropView;
-
+	private _sound: egret.Sound;
 	public constructor(gameStage: eui.Component) {
 		this._gameStage = gameStage;
 		this.init();
@@ -48,6 +48,8 @@ class GameLogic {
 		// 如果该关卡已经购买了道具，则先使用道具
 		this.useProp();
 
+		this._sound = RES.getRes("win_mp3");
+
 		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.SKIP_GUIDE, this.skip_guide, this);
 		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.SUCCESS, this.success, this);
 		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_SEL_LEVEL_BUTTON, this.tap_selLevelButton, this);
@@ -55,6 +57,7 @@ class GameLogic {
 		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_PROP_BUTTON, this.tap_propButton, this);
 		this._propView.propViewDispatcher.addEventListener(PropViewEvent.TAP_PART_LINE_BUTTON, this.tap_partLineButton,this);
 		this._propView.propViewDispatcher.addEventListener(PropViewEvent.TAP_SHOW_LINE_BUTTON, this.tap_showLineButton,this);
+		this._mainView.mainViewDispatcher.addEventListener(MainViewEvent.TAP_SOUND_BUTTON, this.tap_soundButton, this);
 		
 		this._levelView.dispatcher.addEventListener(LevelViewEvent.TAP_SEL_LEVEL_BUTTON, this.tap_selLevelButtonInLevelView, this);
 		this._levelView.dispatcher.addEventListener(LevelViewEvent.TAP_ENDLESS_BUTTON, this.tap_endlessButton, this);
@@ -67,6 +70,7 @@ class GameLogic {
 		this._levelView.show();
 	}
 	private success(evt:MainViewEvent) {
+		GameData.soundOn && this._sound.play(0,1);
 		let starNum = Math.max(GameData.getStarLevelGrade(GameData.nowLevel), evt.starNum);
 		GameData.setStarlevelGrade(GameData.nowLevel, starNum);
 		GameData.levelNum = Math.max(GameData.nowLevel + 1, GameData.levelNum);
@@ -120,6 +124,10 @@ class GameLogic {
 	}
 	private tap_propButton() {
 		this._propView.show();
+	}
+	private tap_soundButton(evt: MainViewEvent) {
+		// console.log(evt.soundOn);
+		GameData.soundOn = evt.soundOn;
 	}
 	private tap_partLineButton() {
 		if(GameData.propPartLine.indexOf(GameData.nowLevel) === -1) {

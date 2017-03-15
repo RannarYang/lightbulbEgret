@@ -5,7 +5,7 @@ class MainView extends eui.Component{
 	private selLevelButton: eui.Button;
 	private replayButton: eui.Button;
 	private propButton: eui.Button;
-	
+	private soundButton: eui.Button;
 	private guideElement: eui.Component;
 	private levelNumGroup: eui.Group;
 	private level_num1_Image: eui.Image;
@@ -32,6 +32,8 @@ class MainView extends eui.Component{
 			this.replayButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_replayButton, this);
 		} else if (instance === this.propButton) {
 			this.propButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_propButton, this);
+		}  else if (instance === this.soundButton) {
+			this.soundButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap_soundButton, this);
 		} else if (instance === this.levelNumGroup) {
 			this.setLevelNumImage();
 		} else if (instance === this.gameButtonGroup) {
@@ -108,6 +110,11 @@ class MainView extends eui.Component{
 	}
 	private tap_propButton() {
 		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_PROP_BUTTON);
+		this._mainViewDispatcher.dispatchEvent(mvt);
+	}
+	private tap_soundButton(evt:egret.TouchEvent) {
+		let mvt:MainViewEvent = new MainViewEvent(MainViewEvent.TAP_SOUND_BUTTON);
+		mvt.soundOn = !evt.target.selected;
 		this._mainViewDispatcher.dispatchEvent(mvt);
 	}
 	private tap_gridelement(evt) {

@@ -50,6 +50,9 @@ class GameData {
 
 	// 道具
 	public static sureGridArr = [];
+	// sound
+	public static soundOn = true;
+
 	public static initData() {
 		this.elements = [];
 		this.lightNum = 0;

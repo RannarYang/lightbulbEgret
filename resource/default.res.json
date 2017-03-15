@@ -5,7 +5,7 @@
 			"name":"preload"
 		},
 		{
-			"keys":"8_png,9_png,bg_jpg,close_png,end_endless_png,end_success_png,end_tool_png,endless_png,endless_lock_png,endless_text_png,hand_ani_json,hand_ani_png,left_btn_png,left_btn_disable_png,level_bg_jpg,level_text_png,light_png,lock_png,moregame_btn_png,nextlevel_btn_png,num0_png,num1_png,num2_png,num3_png,num4_png,num5_png,num6_png,num7_png,num8_png,num9_png,part_line_btn_png,power_png,replay_btn_png,right_btn_png,right_btn_disable_png,selectlevel_btn_png,share_btn_png,showline_btn_png,soundOff_png,soundOn_png,star0_s_png,star1_s_png,star2_s_png,star3_s_png,sure_btn_png,title_png,tool_icon_png,unlight_png,unlock_png,0_png,1_png,2_png,3_png,4_png,5_png,6_png,7_png,levelConfig_json,rankingStandardConfig_json,viewConfig_json,gameConfig_json",
+			"keys":"8_png,9_png,bg_jpg,close_png,end_endless_png,end_success_png,end_tool_png,endless_png,endless_lock_png,endless_text_png,hand_ani_json,hand_ani_png,left_btn_png,left_btn_disable_png,level_bg_jpg,level_text_png,light_png,lock_png,moregame_btn_png,nextlevel_btn_png,num0_png,num1_png,num2_png,num3_png,num4_png,num5_png,num6_png,num7_png,num8_png,num9_png,part_line_btn_png,power_png,replay_btn_png,right_btn_png,right_btn_disable_png,selectlevel_btn_png,share_btn_png,showline_btn_png,soundOff_png,soundOn_png,star0_s_png,star1_s_png,star2_s_png,star3_s_png,sure_btn_png,title_png,tool_icon_png,unlight_png,unlock_png,0_png,1_png,2_png,3_png,4_png,5_png,6_png,7_png,levelConfig_json,rankingStandardConfig_json,viewConfig_json,gameConfig_json,win_mp3",
 			"name":"game"
 		}
 	],
@@ -319,6 +319,11 @@
 			"name":"loading_bg_jpg",
 			"type":"image",
 			"url":"loading/loading_bg.jpg"
+		},
+		{
+			"name":"win_mp3",
+			"type":"sound",
+			"url":"sound/win.mp3"
 		}
 	]
 }
