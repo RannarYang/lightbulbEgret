@@ -28,7 +28,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 class LoadingUI extends egret.Sprite {
-
+    private _loadCompleteHandler: Function;
     public constructor() {
         super();
         this.createView();
@@ -37,18 +37,66 @@ class LoadingUI extends egret.Sprite {
     private textField:egret.TextField;
 
     private createView():void {
+        let loadingBg = new egret.Bitmap();
+        loadingBg.texture = RES.getRes('loading_bg_jpg');
+        loadingBg.x = 0;
+        loadingBg.y = 0;
+        loadingBg.width = 640;
+        loadingBg.height = 960;
+        this.addChild(loadingBg);
+
         this.textField = new egret.TextField();
         this.addChild(this.textField);
-        this.textField.y = 300;
-        this.textField.width = 480;
+        this.textField.y = 500;
+        this.textField.width = 640;
         this.textField.height = 100;
         this.textField.textAlign = "center";
-        let preload_bg = new egret.Bitmap();
-        preload_bg.texture = RES.getRes('loading_bg');
-        this.addChild(preload_bg);
+        this.textField.textColor = 0x22a3d4;
+        this.textField.size = 44;
     }
 
-    public setProgress(current:number, total:number):void {
-        this.textField.text = `Loading...${current}/${total}`;
+    public load(groupName: string, loadCompleteHandler: Function) {
+        if(loadCompleteHandler) {
+            this._loadCompleteHandler = loadCompleteHandler;
+        }
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+        
+        RES.loadGroup(groupName);
+    }
+
+    // public setProgress(current:number, total:number):void {
+    //     this.textField.text = `Loading...${current}/${total}`;
+    // }
+    	/**
+    * 资源组加载完成
+    */
+    public onResourceLoadComplete(event: RES.ResourceEvent): void {
+        RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+        if(this._loadCompleteHandler){
+            this._loadCompleteHandler();
+            this._loadCompleteHandler = null;
+        }
+    }
+		
+	/**
+    * 资源组加载出错
+    */
+    public onResourceLoadError(event: RES.ResourceEvent): void {
+        console.warn("Group:" + event.groupName + " has failed to load");
+        //忽略加载失败的项目
+        this.onResourceLoadComplete(event);
+    }
+    
+    /**
+    * 资源组加载进度
+    */
+    public onResourceProgress(event: RES.ResourceEvent): void {
+        if(event.groupName == "game") {
+            this.textField.text = `Loading...${event.itemsLoaded}/${event.itemsTotal}`;
+        }
     }
 }

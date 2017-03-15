@@ -40,10 +40,6 @@ class Main extends eui.UILayer {
         let assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter",assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter",new ThemeAdapter());
-        //Config loading process interface
-        //设置加载进度界面
-        this.loadingView = new LoadingUI();
-        this.stage.addChild(this.loadingView);
         // initialize the Resource loading library
         //初始化Resource资源加载库
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
@@ -82,13 +78,20 @@ class Main extends eui.UILayer {
      */
     private onResourceLoadComplete(event:RES.ResourceEvent):void {
         if (event.groupName == "preload") {
-            this.stage.removeChild(this.loadingView);
+             //Config loading process interface
+            //设置加载进度界面
+            this.loadingView = new LoadingUI();
+            this.stage.addChild(this.loadingView);
+            let self = this;
+            this.loadingView.load('game', function(){
+                self.isResourceLoadEnd = true;
+                self.createScene();
+            })
+
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
             RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
-            this.isResourceLoadEnd = true;
-            this.createScene();
         }
     }
     private createScene(){
@@ -120,7 +123,7 @@ class Main extends eui.UILayer {
      */
     private onResourceProgress(event:RES.ResourceEvent):void {
         if (event.groupName == "preload") {
-            this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
+            // this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
         }
     }
     /**
@@ -128,13 +131,14 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected startCreateScene(): void {
-        // let levelView = new LevelView();
-        // this.addChild(levelView);
-        // let mainView = new MainView();
-        // this.addChild(mainView);
         let gameLayer: eui.Component = new eui.Component();
+        // 加入一个蓝色的背景, 防止loading切换的时候跳跃
+        let rect = new eui.Rect(640, 960, 0x32c9fe);
+        gameLayer.addChild(rect);
+
         this.addChild(gameLayer);
         new GameLogic(gameLayer);
+        this.stage.removeChild(this.loadingView);
     }
     
 }
